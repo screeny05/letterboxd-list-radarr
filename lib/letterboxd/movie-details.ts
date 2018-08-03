@@ -30,7 +30,7 @@ export const getMoviesDetailCached = async(slugs: string[], concurrencyLimit: nu
 export const getMovieDetail = async (slug: string) => {
     const details = await getKanpai<LetterboxdMovieDetails>(`${LETTERBOXD_ORIGIN}${slug}`, {
         name: '.headline-1',
-        published: '[itemprop="datePublished"]',
+        published: '#featured-film-header .number',
         imdb: ['[data-track-action="imdb" i]', '[href]', getFirstMatch(IMDB_REGEX)],
         tmdb: ['[data-track-action="tmdb" i]', '[href]', getFirstMatch(TMDB_REGEX)]
     });
