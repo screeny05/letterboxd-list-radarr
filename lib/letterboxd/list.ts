@@ -19,8 +19,8 @@ export const getList = async (listSlug: string, onPage?: (page: number) => void)
     const posters: LetterboxdPoster[] = [];
     let nextPage: number|null = 1;
     while(nextPage){
-        if(onPage){ onPage(nextPage); }
         const result = await getListPaginated(listSlug, nextPage);
+        if(onPage){ onPage(nextPage); }
         posters.push(...result.posters);
         nextPage = Number.parseInt(result.next);
         nextPage = Number.isNaN(nextPage) ? null : nextPage;

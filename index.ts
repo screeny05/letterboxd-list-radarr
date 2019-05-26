@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 5000
 const app = express();
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
+app.get('/', (req, res) => res.send('Use letterboxd.com path as path here.'));
+
 app.get('/favicon.ico', (req, res) => res.status(404).send());
 
 app.get(/(.*)/, async (req, res) => {
@@ -16,9 +18,9 @@ app.get(/(.*)/, async (req, res) => {
 
     try {
         let firstChunk = true;
-        res.write('[');
-
         const posters = await getListCached(slug, () => res.write(' '));
+
+        res.write('[');
 
         await getMoviesDetailCached(
             posters.map((poster: LetterboxdPoster) => poster.slug),
@@ -34,6 +36,6 @@ app.get(/(.*)/, async (req, res) => {
 
         res.end(']');
     } catch(e){
-        res.status(404).send();
+        res.status(404).send(e.message);
     }
 });
