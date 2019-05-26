@@ -1,7 +1,7 @@
 import { getList } from './lib/letterboxd/list';
 import express from 'express';
 import { normalizeSlug } from './lib/letterboxd/util';
-import { transformLetterboxdListToRadarr } from './lib/radarr/transform';
+import { transformLetterboxdMovieToRadarr } from './lib/radarr/transform';
 
 const PORT = process.env.PORT || 5000
 
@@ -14,8 +14,13 @@ app.get(/(.*)/, async (req, res) => {
     const slug = normalizeSlug(req.params[0]);
 
     try {
-        const movieData = await getList(slug);
-        res.send(transformLetterboxdListToRadarr(movieData));
+        res.write('[');
+        await getList(
+            slug,
+            () => void 0,
+            movie => res.write(JSON.stringify(transformLetterboxdMovieToRadarr(movie)))
+        );
+        res.end(']');
     } catch(e){
         res.status(404).send();
     }

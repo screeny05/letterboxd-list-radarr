@@ -22,12 +22,16 @@ interface MovieCache {
     }
 }
 
-export const getMoviesDetail = async(slugs: string[], concurrencyLimit: number = 7) => {
+export const getMoviesDetail = async(slugs: string[], concurrencyLimit: number = 7, onDetail?: (movie: LetterboxdMovieDetails) => void) => {
     const limit = pLimit(concurrencyLimit);
     const cache = await openCache();
-    const movies = await Promise.all(slugs.map(
-        slug => limit(() => getCachedMovieDetail(slug, cache))
-    ));
+    const movies = await Promise.all(slugs.map(async slug => {
+        const detail = await limit(() => getCachedMovieDetail(slug, cache));
+        if(onDetail){
+            onDetail(detail);
+        }
+        return detail;
+    }));
     await closeCache(cache);
     return movies;
 };

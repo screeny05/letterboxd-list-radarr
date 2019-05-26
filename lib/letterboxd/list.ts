@@ -1,6 +1,6 @@
 // @ts-ignore
 import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from './util';
-import { getMoviesDetail } from './movie-details';
+import { getMoviesDetail, LetterboxdMovieDetails } from './movie-details';
 
 const LETTERBOX_NEXT_PAGE_REGEX = /\/page\/(\d+)/;
 
@@ -14,17 +14,17 @@ interface LetterboxdListPage {
     posters: LetterboxdPoster[];
 }
 
-export const getList = async (listSlug: string) => {
+export const getList = async (listSlug: string, onPage?: (page: number) => void, onDetail?: (movie: LetterboxdMovieDetails) => void) => {
     const posters: LetterboxdPoster[] = [];
     let nextPage: number|null = 1;
     while(nextPage){
-        console.log('Page', nextPage);
+        if(onPage){ onPage(nextPage); }
         const result = await getListPaginated(listSlug, nextPage);
         posters.push(...result.posters);
         nextPage = Number.parseInt(result.next);
         nextPage = Number.isNaN(nextPage) ? null : nextPage;
     }
-    const movies = await getMoviesDetail(posters.map(poster => poster.slug));
+    const movies = await getMoviesDetail(posters.map(poster => poster.slug), 7, onDetail);
     return movies;
 };
 
