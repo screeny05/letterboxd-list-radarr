@@ -1,3 +1,4 @@
+// @ts-ignore
 import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from './util';
 import { getMoviesDetail } from './movie-details';
 
