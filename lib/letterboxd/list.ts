@@ -1,10 +1,11 @@
 // @ts-ignore
 import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from './util';
-import { getMoviesDetail, LetterboxdMovieDetails } from './movie-details';
+import * as cache from '../cache';
 
 const LETTERBOX_NEXT_PAGE_REGEX = /\/page\/(\d+)/;
+const LIST_CACHE_TIMEOUT = 30 * 60;
 
-interface LetterboxdPoster {
+export interface LetterboxdPoster {
     slug: string;
     title: string;
 }
@@ -14,7 +15,7 @@ interface LetterboxdListPage {
     posters: LetterboxdPoster[];
 }
 
-export const getList = async (listSlug: string, onPage?: (page: number) => void, onDetail?: (movie: LetterboxdMovieDetails) => void) => {
+export const getList = async (listSlug: string, onPage?: (page: number) => void) => {
     const posters: LetterboxdPoster[] = [];
     let nextPage: number|null = 1;
     while(nextPage){
@@ -24,8 +25,17 @@ export const getList = async (listSlug: string, onPage?: (page: number) => void,
         nextPage = Number.parseInt(result.next);
         nextPage = Number.isNaN(nextPage) ? null : nextPage;
     }
-    const movies = await getMoviesDetail(posters.map(poster => poster.slug), 7, onDetail);
-    return movies;
+    return posters;
+};
+
+export const getListCached = async (listSlug: string, onPage?: (page: number) => void) => {
+    if(await cache.has(listSlug)){
+        return await cache.get(listSlug);
+    }
+
+    const posters = await getList(listSlug, onPage);
+    await cache.set(listSlug, posters, LIST_CACHE_TIMEOUT);
+    return posters;
 };
 
 export const getListPaginated = async (listSlug: string, page: number) => {

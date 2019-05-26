@@ -1,11 +1,9 @@
 import pLimit from "p-limit";
 import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from "./util";
-import { readFile, writeFile } from "fs";
-import { promisify } from "util";
+import * as cache from "../cache";
 
 const IMDB_REGEX = /imdb\.com\/title\/(.*?)(\/|$)/i;
 const TMDB_REGEX = /themoviedb\.org\/movie\/(.*?)(\/|$)/;
-const CACHE_VERSION = 1;
 
 export interface LetterboxdMovieDetails {
     slug: string;
@@ -15,24 +13,15 @@ export interface LetterboxdMovieDetails {
     tmdb: string;
 }
 
-interface MovieCache {
-    version: number;
-    movies: {
-        [slug: string]: LetterboxdMovieDetails;
-    }
-}
-
-export const getMoviesDetail = async(slugs: string[], concurrencyLimit: number = 7, onDetail?: (movie: LetterboxdMovieDetails) => void) => {
+export const getMoviesDetailCached = async(slugs: string[], concurrencyLimit: number = 7, onDetail?: (movie: LetterboxdMovieDetails) => void) => {
     const limit = pLimit(concurrencyLimit);
-    const cache = await openCache();
     const movies = await Promise.all(slugs.map(async slug => {
-        const detail = await limit(() => getCachedMovieDetail(slug, cache));
+        const detail = await limit(() => getCachedMovieDetail(slug));
         if(onDetail){
             onDetail(detail);
         }
         return detail;
     }));
-    await closeCache(cache);
     return movies;
 };
 
@@ -47,30 +36,13 @@ export const getMovieDetail = async (slug: string) => {
     return details;
 };
 
-export const openCache = async () => {
-    let cache: MovieCache = { version: CACHE_VERSION, movies: {} };
-    try {
-        const json = await promisify(readFile)('./cache', { encoding: 'utf8' });
-        const parsed = JSON.parse(json);
-        if(cache.version === CACHE_VERSION){
-            cache = parsed;
-        }
-    } catch(e){}
-
-    return cache;
-};
-
-export const closeCache = async (cache: MovieCache) => {
-    await promisify(writeFile)('./cache', JSON.stringify(cache), { encoding: 'utf8' });
-};
-
-export const getCachedMovieDetail = async (slug: string, cache: MovieCache) => {
-    if(cache.movies[slug]){
-        return cache.movies[slug];
+export const getCachedMovieDetail = async (slug: string) => {
+    if(await cache.has(slug)){
+        return await cache.get(slug);
     }
 
     const data = await getMovieDetail(slug);
-    cache.movies[slug] = data;
+    await cache.set(slug, data);
 
     return data;
 };
