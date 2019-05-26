@@ -3,8 +3,10 @@ import express from 'express';
 import { normalizeSlug } from './lib/letterboxd/util';
 import { transformLetterboxdListToRadarr } from './lib/radarr/transform';
 
+const PORT = process.env.PORT || 5000
+
 const app = express();
-app.listen(3000, () => console.log('listening http://localhost:3000'));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 app.get('/favicon.ico', (req, res) => res.status(404).send());
 
