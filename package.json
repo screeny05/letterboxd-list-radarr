@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Sebastian Langer <sl@scn.cx>",
   "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "css-select": "^2.0.2",
