@@ -14,11 +14,18 @@ app.get(/(.*)/, async (req, res) => {
     const slug = normalizeSlug(req.params[0]);
 
     try {
+        let firstChunk = true;
         res.write('[');
         await getList(
             slug,
             () => void 0,
-            movie => res.write(JSON.stringify(transformLetterboxdMovieToRadarr(movie)))
+            movie => {
+                if(!firstChunk){
+                    res.write(',');
+                }
+                res.write(JSON.stringify(transformLetterboxdMovieToRadarr(movie)));
+                firstChunk = false;
+            }
         );
         res.end(']');
     } catch(e){
