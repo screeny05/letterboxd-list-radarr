@@ -1,6 +1,6 @@
 import pLimit from "p-limit";
 import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from "./util";
-import * as cache from "../cache";
+import * as cache from "../cache/index";
 
 const IMDB_REGEX = /imdb\.com\/title\/(.*?)(\/|$)/i;
 const TMDB_REGEX = /themoviedb\.org\/movie\/(.*?)(\/|$)/;

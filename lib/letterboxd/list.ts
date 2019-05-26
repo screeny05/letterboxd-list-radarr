@@ -1,6 +1,6 @@
 // @ts-ignore
 import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from './util';
-import * as cache from '../cache';
+import * as cache from '../cache/index';
 
 const LETTERBOX_NEXT_PAGE_REGEX = /\/page\/(\d+)/;
 const LIST_CACHE_TIMEOUT = 30 * 60;
