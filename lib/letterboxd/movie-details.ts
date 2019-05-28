@@ -10,10 +10,12 @@ export interface LetterboxdMovieDetails {
     name: string;
     published: string;
     imdb: string;
-    tmdb: string;
+    tmdb?: string;
 }
 
 export const getMoviesDetailCached = async(slugs: string[], concurrencyLimit: number = 7, onDetail?: (movie: LetterboxdMovieDetails) => void) => {
+    // we have to remove empty entries to prevent infinite loading
+    slugs = slugs.filter(slug => slug);
     const limit = pLimit(concurrencyLimit);
     const movies = await Promise.all(slugs.map(async slug => {
         const detail = await limit(() => getCachedMovieDetail(slug));

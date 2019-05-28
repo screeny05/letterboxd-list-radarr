@@ -3,6 +3,9 @@ import redis from 'redis';
 const cache = redis.createClient({ url: process.env.REDIS_URL });
 
 export const has = (key: string): Promise<boolean> => new Promise((resolve, reject) => {
+    if(!key){
+        return false;
+    }
     cache.exists(key, (err, data) => {
         if(err){
             return reject(err);

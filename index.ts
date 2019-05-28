@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 5000
 const app = express();
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
-app.get('/', (req, res) => res.send('Use letterboxd.com path as path here.'));
+app.get('/', (_, res) => res.send('Use letterboxd.com path as path here.'));
 
-app.get('/favicon.ico', (req, res) => res.status(404).send());
+app.get('/favicon.ico', (_, res) => res.status(404).send());
 
 app.get(/(.*)/, async (req, res) => {
     const slug = normalizeSlug(req.params[0]);
@@ -26,6 +26,11 @@ app.get(/(.*)/, async (req, res) => {
             posters.map((poster: LetterboxdPoster) => poster.slug),
             7,
             movie => {
+                // If there's no tmdb-id it may be a tv-show
+                // radarr throws an error, if an entry is missing an id
+                if(!movie.tmdb){
+                    return;
+                }
                 if(!firstChunk){
                     res.write(',');
                 }
