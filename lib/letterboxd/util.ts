@@ -9,7 +9,7 @@ export const getFirstMatch = (regex: RegExp) => (val?: string): string => {
     }
     const match = val.match(regex);
     if(!match || match.length < 2){
-        return val;
+        return '';
     }
     return match[1];
 };
