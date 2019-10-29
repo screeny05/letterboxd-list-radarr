@@ -10,7 +10,7 @@
     "postinstall": "tsc --outDir dist --skipLibCheck || exit 0"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "express": "^4.17.1",
     "kanpai-scraper": "^0.1.0",
     "p-limit": "^2.2.0",
