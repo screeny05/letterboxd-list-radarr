@@ -42,7 +42,7 @@ export const getListPaginated = async (listSlug: string, page: number) => {
     return await getKanpai<LetterboxdListPage>(`${LETTERBOXD_ORIGIN}${listSlug}page/${page}/`, {
         next: ['.paginate-nextprev .next', '[href]', getFirstMatch(LETTERBOX_NEXT_PAGE_REGEX)],
         posters: ['.poster-list .film-poster', {
-            slug: ['$', '[data-film-slug]'],
+            slug: ['$', '[data-target-link]'],
             title: ['.image', '[alt]']
         }]
     });
