@@ -26,11 +26,24 @@ Supported Lists:
 
 Others may be supported, but are not tested, yet.
 
+## Support
+If this is helpful to you, consider sponsoring me.
+
+Currently the money will go to making the heroku-server beefier, so there can be more than the puny 25mb of memory for the redis-server.
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/SebastianLanger/)
+
 ## Self-hosting
 
 ### Using heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+If you are planning on running this instance for a lot of movies, be sure to set the correct cache-eviction policy for the redis:
+
+```
+heroku redis:maxmemory redis-cubed-18265 --policy allkeys-lfu
+```
 
 ### Using docker
 1. Clone the repo
