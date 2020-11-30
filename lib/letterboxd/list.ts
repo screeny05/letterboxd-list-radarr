@@ -1,8 +1,7 @@
-// @ts-ignore
-import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from './util';
+import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN, LETTERBOXD_NEXT_PAGE_REGEX } from './util';
 import * as cache from '../cache/index';
 
-const LETTERBOX_NEXT_PAGE_REGEX = /\/page\/(\d+)/;
+// Cache Lists for 30min
 const LIST_CACHE_TIMEOUT = 30 * 60;
 
 export interface LetterboxdPoster {
@@ -15,7 +14,7 @@ interface LetterboxdListPage {
     posters: LetterboxdPoster[];
 }
 
-export const getList = async (listSlug: string, onPage?: (page: number) => void) => {
+export const getList = async (listSlug: string, onPage?: (page: number) => void): Promise<LetterboxdPoster[]> => {
     const posters: LetterboxdPoster[] = [];
     let nextPage: number|null = 1;
     while(nextPage){
@@ -28,7 +27,7 @@ export const getList = async (listSlug: string, onPage?: (page: number) => void)
     return posters;
 };
 
-export const getListCached = async (listSlug: string, onPage?: (page: number) => void) => {
+export const getListCached = async (listSlug: string, onPage?: (page: number) => void): Promise<LetterboxdPoster[]> => {
     if(await cache.has(listSlug)){
         return await cache.get(listSlug);
     }
@@ -38,9 +37,9 @@ export const getListCached = async (listSlug: string, onPage?: (page: number) =>
     return posters;
 };
 
-export const getListPaginated = async (listSlug: string, page: number) => {
+export const getListPaginated = async (listSlug: string, page: number): Promise<LetterboxdListPage> => {
     return await getKanpai<LetterboxdListPage>(`${LETTERBOXD_ORIGIN}${listSlug}page/${page}/`, {
-        next: ['.paginate-nextprev .next', '[href]', getFirstMatch(LETTERBOX_NEXT_PAGE_REGEX)],
+        next: ['.paginate-nextprev .next', '[href]', getFirstMatch(LETTERBOXD_NEXT_PAGE_REGEX)],
         posters: ['.poster-list .film-poster', {
             slug: ['$', '[data-target-link]'],
             title: ['.image', '[alt]']

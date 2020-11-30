@@ -1,0 +1,10 @@
+{
+    "name": "letterboxd-list-radarr",
+    "description": "Connect radarr to letterboxd.com lists",
+    "addons": [
+        {
+            "plan": "heroku-redis:hobby-dev",
+            "as": "REDIS"
+        }
+    ]
+}

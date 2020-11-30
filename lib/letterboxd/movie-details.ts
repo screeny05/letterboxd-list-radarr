@@ -1,6 +1,9 @@
 import pLimit from "p-limit";
 import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from "./util";
 import * as cache from "../cache/index";
+import { logger } from "../logger";
+
+const moviesLogger = logger.child({ module: 'MoviesDetails' });
 
 const IMDB_REGEX = /imdb\.com\/title\/(.*?)(\/|$)/i;
 const TMDB_REGEX = /themoviedb\.org\/movie\/(.*?)(\/|$)/;
@@ -13,18 +16,25 @@ export interface LetterboxdMovieDetails {
     tmdb?: string;
 }
 
-export const getMoviesDetailCached = async(slugs: string[], concurrencyLimit: number = 7, onDetail?: (movie: LetterboxdMovieDetails) => void) => {
+export const getMoviesDetailCached = async(slugs: string[], concurrencyLimit: number = 7, onDetail?: (movie: LetterboxdMovieDetails) => void, shouldCancel?: () => boolean) => {
     // we have to remove empty entries to prevent infinite loading
     slugs = slugs.filter(slug => slug);
     const limit = pLimit(concurrencyLimit);
     const movies = await Promise.all(slugs.map(async slug => {
-        const detail = await limit(() => getCachedMovieDetail(slug));
-        if(onDetail){
+        const detail = await limit(() => {
+            // Cancel running operations in case client connection closed.
+            if(shouldCancel && shouldCancel()){
+                return;
+            }
+            return getCachedMovieDetail(slug);
+        });
+
+        if(onDetail && detail){
             onDetail(detail);
         }
         return detail;
     }));
-    return movies;
+    return movies.filter(movie => movie);
 };
 
 export const getMovieDetail = async (slug: string) => {
@@ -40,10 +50,14 @@ export const getMovieDetail = async (slug: string) => {
 
 export const getCachedMovieDetail = async (slug: string) => {
     if(await cache.has(slug)){
+        moviesLogger.debug(`Fetched '${slug}' from redis.`);
         return await cache.get(slug);
     }
 
     const data = await getMovieDetail(slug);
+    moviesLogger.debug(`Fetched '${slug}' live.`);
+
+    // We cache movies indefinitely, assuming they don't change
     await cache.set(slug, data);
 
     return data;

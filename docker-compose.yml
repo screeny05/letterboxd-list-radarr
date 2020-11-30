@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  web:
+    image: node:15.3.0-alpine3.10
+    ports:
+      - 5000:5000
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - PORT=5000
+    user: node
+    command: npm run watch
+  redis:
+    image: redis
+    volumes:
+      - ./redis-data/:/data
