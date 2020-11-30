@@ -2,6 +2,7 @@ import axios from 'axios';
 import { executeKanpai, KanpaiExecutable, KanpaiContext } from 'kanpai-scraper';
 
 export const LETTERBOXD_ORIGIN = 'https://letterboxd.com';
+export const LETTERBOXD_NEXT_PAGE_REGEX = /\/page\/(\d+)/;
 
 export const getFirstMatch = (regex: RegExp) => (val?: string): string => {
     if(!val){
@@ -22,4 +23,7 @@ export const getKanpai = async<T = any> (url: string, executable: KanpaiExecutab
     });
 };
 
+/**
+ * Ensures slug starts and ends with a single slash.
+ */
 export const normalizeSlug = (slug: string): string => '/' + slug.replace(/^\/*(.*?)\/*$/, '$1') + '/';
