@@ -46,9 +46,12 @@ heroku redis:maxmemory redis-cubed-18265 --policy allkeys-lfu
 ```
 
 ### Using docker
-1. Clone the repo
-2. `cd letterboxd-list-radarr`
-3. `docker-compose up -d`
+```
+git clone git@github.com:screeny05/letterboxd-list-radarr.git
+cd letterboxd-list-radarr
+npm install
+docker-compose up -d
+```
 
 ### Local & development
 
