@@ -57,7 +57,8 @@ export const getCachedMovieDetail = async (slug: string) => {
     const data = await getMovieDetail(slug);
     moviesLogger.debug(`Fetched '${slug}' live.`);
 
-    // We cache movies indefinitely, assuming they don't change
+    // We cache movies indefinitely, assuming they don't change.
+    // Be sure to configure redis with a maxmemory and an eviction policy or this will eat all your RAM
     await cache.set(slug, data);
 
     return data;

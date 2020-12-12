@@ -13,6 +13,8 @@ services:
     user: node
     command: npm run watch
   redis:
-    image: redis
+    image: redis:6.0
+    command: redis-server /usr/local/etc/redis/redis.conf --appendonly yes
     volumes:
       - ./redis-data/:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf

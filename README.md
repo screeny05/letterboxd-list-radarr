@@ -4,8 +4,18 @@ Connect radarr to letterboxd.com lists
 
 ## Usage
 
-This repository is hosted on heroku. That way you don't have to run the service yourself.
-To use it, you have to:
+This repository is hosted on heroku. That way you don't have to run the service yourself (but you can, see below).
+
+### Radarr v3
+
+1. Configure a new list in radarr, using the _Custom Lists_ provider.
+2. Set _List URL_ to `https://letterbox-list-radarr.herokuapp.com` followed by the path to your list in letterboxd. For example: `https://letterbox-list-radarr.herokuapp.com/screeny05/list/jackie-chan-the-definitive-list/`
+3. Configure the rest of the settings to your liking
+4. Test & Save.
+
+If there are any problems with v3, feel free to open an issue.
+
+### Radarr v2
 
 1. Configure a new list in radarr, using the _Radarr Lists_ provider.
 2. Set _Radarr API URL_ to `https://letterbox-list-radarr.herokuapp.com` (or your custom one, if you choose self-hosting)
@@ -42,7 +52,7 @@ Currently the money will go to making the heroku-server beefier, so there can be
 If you are planning on running this instance for a lot of movies, be sure to set the correct cache-eviction policy for the redis:
 
 ```
-heroku redis:maxmemory redis-cubed-18265 --policy allkeys-lfu
+heroku redis:maxmemory <name-of-redis-instance> --policy allkeys-lfu
 ```
 
 ### Using docker
@@ -52,6 +62,10 @@ cd letterboxd-list-radarr
 npm install
 docker-compose up -d
 ```
+
+The file redis.conf can be used to configure your own settings for redis.
+
+Your local instance will be available on port 5000 `http://localhost:5000`
 
 ### Local & development
 
