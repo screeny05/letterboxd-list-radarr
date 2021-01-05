@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@types/winston": "^2.4.4",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "kanpai-scraper": "^0.1.0",
     "p-limit": "^2.2.0",
