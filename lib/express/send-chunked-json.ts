@@ -33,9 +33,8 @@ export const sendChunkedJson = (res: Response) => {
         },
         fail(code: number, message: string){
             clearInterval(keepAliveInterval);
-            res
-                .status(code)
-                .end(message);
+            res.status(code);
+            res.end(message);
         }
     }
 }

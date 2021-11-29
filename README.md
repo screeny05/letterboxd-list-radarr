@@ -32,16 +32,14 @@ Supported Lists:
     * Writer: https://letterboxd.com<b>/writer/charlie-kaufman/</b>
     * Etc.
 * Collections: https://letterboxd.com<b>/films/in/halloween-collection/</b>
-* Lists tagged by User: https://letterboxd.com<b>/crew/tag/favorites/lists/</b>
+* Lists tagged by User are not supported. Please use links to the lists themself instead.
 
 Others may be supported, but are not tested, yet.
 
-## Support
-If this is helpful to you, consider sponsoring me.
+## FAQ
 
-Currently the money will go to making the heroku-server beefier, so there can be more than the puny 25mb of memory for the redis-server.
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/SebastianLanger/)
+### The API always returns `Disallowed URL`
+This means that letterboxd.com does not allow this URL to be crawled per their [robots.txt](https://letterboxd.com/robots.txt). Your URL probably contains sorting or expensive queries by letterboxd. Check the linked file to ensure your given URL does not match any of the listed paths.
 
 ## Self-hosting
 

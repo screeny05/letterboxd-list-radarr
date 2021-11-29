@@ -36,7 +36,8 @@ app.get(/(.*)/, async (req, res) => {
 
     try {
         posters = await fetchPostersFromSlug(slug);
-    } catch (e) {
+    } catch (e: any) {
+        isFinished = true;
         chunk.fail(404, e.message);
         return;
     }

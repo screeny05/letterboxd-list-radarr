@@ -1,6 +1,7 @@
 import { LetterboxdMovieDetails } from "../letterboxd/movie-details";
+import { RadarrMovieDetails } from "./types";
 
-export const transformLetterboxdMovieToRadarr = (movie: LetterboxdMovieDetails) => {
+export const transformLetterboxdMovieToRadarr = (movie: LetterboxdMovieDetails): RadarrMovieDetails => {
     return {
         id: movie.tmdb ? Number.parseInt(movie.tmdb) : null,
         imdb_id: movie.imdb,
