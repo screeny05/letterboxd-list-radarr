@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: service-web
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    repo: https://github.com/screeny05/letterboxd-list-radarr.git
+    plan: free
+    envVars:
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: service-redis
+          property: connectionString
+      
+  - type: redis
+    name: service-redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: allkeys-lfu

@@ -4,12 +4,12 @@ Connect radarr to letterboxd.com lists
 
 ## Usage
 
-This repository is hosted on heroku. That way you don't have to run the service yourself (but you can, see below).
+This service is hosted on render. That way you don't have to run the service yourself (but you can, see below).
 
 ### Radarr v3
 
 1. Configure a new list in radarr, using the _Custom Lists_ provider.
-2. Set _List URL_ to `https://letterbox-list-radarr.herokuapp.com` followed by the path to your list in letterboxd. For example: `https://letterbox-list-radarr.herokuapp.com/screeny05/list/jackie-chan-the-definitive-list/`
+2. Set _List URL_ to `https://letterboxd-list-radarr.onrender.com` followed by the path to your list in letterboxd. For example: `https://letterboxd-list-radarr.onrender.com/screeny05/list/jackie-chan-the-definitive-list/`
 3. Configure the rest of the settings to your liking
 4. Test & Save.
 
@@ -18,7 +18,7 @@ If there are any problems with v3, feel free to open an issue.
 ### Radarr v2
 
 1. Configure a new list in radarr, using the _Radarr Lists_ provider.
-2. Set _Radarr API URL_ to `https://letterbox-list-radarr.herokuapp.com` (or your custom one, if you choose self-hosting)
+2. Set _Radarr API URL_ to `https://letterboxd-list-radarr.onrender.com` (or your custom one, if you choose self-hosting)
 3. Set _Path to list_ to whatever appears in the URL for the list of your choosing after `letterboxd.com`.
 
 Supported Lists:
@@ -42,6 +42,14 @@ Others may be supported, but are not tested, yet.
 This means that letterboxd.com does not allow this URL to be crawled per their [robots.txt](https://letterboxd.com/robots.txt). Your URL probably contains sorting or expensive queries by letterboxd. Check the linked file to ensure your given URL does not match any of the listed paths.
 
 ## Self-hosting
+
+### Using render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+It might take a few minutes after deploying to render, before the instance becomes available.
+
+Be aware that render currently has a [free limit](https://render.com/docs/free) of 750h/month.
 
 ### Using heroku
 
