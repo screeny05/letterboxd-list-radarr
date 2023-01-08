@@ -9,32 +9,37 @@ const KEEP_ALIVE_INTERVAL = 5 * 1000;
 export const sendChunkedJson = (res: Response) => {
     let isFirstChunk = true;
 
-    res.header('Content-Type', 'application/json');
-    res.header('Transfer-Encoding', 'chunked');
+    res.header("Content-Type", "application/json");
+    res.header("Transfer-Encoding", "chunked");
 
     // Send regular keep-alive to prevent loadbalancer timeouts
-    const sendKeepAlive = () => res.write('\r\n');
+    const sendKeepAlive = () => res.write("\r\n");
     const keepAliveInterval = setInterval(sendKeepAlive, KEEP_ALIVE_INTERVAL);
 
     return {
-        push(chunk: any){
-            res.write(isFirstChunk ? '[' : ',');
+        push(chunk: any) {
+            res.write(isFirstChunk ? "[" : ",");
             res.write(JSON.stringify(chunk));
-            res.write('\r\n');
+            res.write("\r\n");
             isFirstChunk = false;
         },
-        end(){
+        end() {
             clearInterval(keepAliveInterval);
 
-            if(isFirstChunk){
-                res.write('[');
+            if (isFirstChunk) {
+                res.write("[");
             }
-            res.end(']');
+            res.end("]");
         },
-        fail(code: number, message: string){
+        fail(code: number, message: string) {
             clearInterval(keepAliveInterval);
             res.status(code);
-            res.end(message);
-        }
-    }
-}
+
+            res.write(JSON.stringify({ message }));
+            if (!isFirstChunk) {
+                res.write("]");
+            }
+            res.end();
+        },
+    };
+};
