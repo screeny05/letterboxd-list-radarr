@@ -23,22 +23,23 @@ If there are any problems with v3, feel free to open an issue.
 
 Supported Lists:
 
-* Watchilsts: https://letterboxd.com<b>/screeny05/watchlist/</b>
-* Regular Lists: https://letterboxd.com<b>/screeny05/list/jackie-chan-the-definitive-list/</b>
-* Watched Movies: https://letterboxd.com<b>/screeny05/films/</b>
-* Filmography:
-    * Actor: https://letterboxd.com<b>/actor/tom-hanks/</b>
-    * Director: https://letterboxd.com<b>/director/alfred-hitchcock/</b>
-    * Writer: https://letterboxd.com<b>/writer/charlie-kaufman/</b>
-    * Etc.
-* Collections: https://letterboxd.com<b>/films/in/halloween-collection/</b>
-* Lists tagged by User are not supported. Please use links to the lists themself instead.
+-   Watchilsts: https://letterboxd.com<b>/screeny05/watchlist/</b>
+-   Regular Lists: https://letterboxd.com<b>/screeny05/list/jackie-chan-the-definitive-list/</b>
+-   Watched Movies: https://letterboxd.com<b>/screeny05/films/</b>
+-   Filmography:
+    -   Actor: https://letterboxd.com<b>/actor/tom-hanks/</b>
+    -   Director: https://letterboxd.com<b>/director/alfred-hitchcock/</b>
+    -   Writer: https://letterboxd.com<b>/writer/charlie-kaufman/</b>
+    -   Etc.
+-   Collections: https://letterboxd.com<b>/films/in/halloween-collection/</b>
+-   Lists tagged by User are not supported. Please use links to the lists themself instead.
 
 Others may be supported, but are not tested, yet.
 
 ## FAQ
 
 ### The API always returns `Disallowed URL`
+
 This means that letterboxd.com does not allow this URL to be crawled per their [robots.txt](https://letterboxd.com/robots.txt). Your URL probably contains sorting or expensive queries by letterboxd. Check the linked file to ensure your given URL does not match any of the listed paths.
 
 ## Self-hosting
@@ -49,7 +50,7 @@ This means that letterboxd.com does not allow this URL to be crawled per their [
 
 It might take a few minutes after deploying to render, before the instance becomes available.
 
-Be aware that render currently has a [free limit](https://render.com/docs/free) of 750h/month.
+Be aware that render currently has a [free limit](https://render.com/docs/free) of 750h/month. That's exactly enough to run this single service for the whole month.
 
 ### Using heroku
 
@@ -62,6 +63,32 @@ heroku redis:maxmemory <name-of-redis-instance> --policy allkeys-lfu
 ```
 
 ### Using docker
+
+#### Pre-built docker-image
+
+You will get the newest image by pulling `screeny05/letterboxd-list-radarr:latest`. The image is available for both x86-64 and arm64.
+
+Here is an example of how to use the image with docker-compose:
+
+```
+version: "3.8"
+services:
+    web:
+        image: screeny05/letterboxd-list-radarr:latest
+        ports:
+            - 5000:5000
+        environment:
+            - REDIS_URL=redis://redis:6379
+        depends_on:
+            - redis
+    redis:
+        image: redis:6.0
+```
+
+For optimal configuration of redis, please check out the [redis.conf](redis.conf) file in this repository.
+
+#### Building it yourself
+
 ```
 git clone git@github.com:screeny05/letterboxd-list-radarr.git
 cd letterboxd-list-radarr
@@ -69,7 +96,7 @@ npm install
 docker-compose up -d
 ```
 
-The file redis.conf can be used to configure your own settings for redis.
+The file redis.conf can be used to configure your own settings for redis. It comes with a memory-limit of 256mb by default. You might want to increase that based on your usage.
 
 Your local instance will be available on port 5000 `http://localhost:5000`
 
@@ -79,10 +106,10 @@ You need a working redis-instance, which is used for caching movie- & list-data.
 
 Following environment-params are supported:
 
-* `REDIS_URL` - A [redis connection string](https://github.com/ServiceStack/ServiceStack.Redis#redis-connection-strings) to your redis-instance
-* `PORT` - The http-port which the application listens on
+-   `REDIS_URL` - A [redis connection string](https://github.com/ServiceStack/ServiceStack.Redis#redis-connection-strings) to your redis-instance
+-   `PORT` - The http-port which the application listens on
 
 1. Clone this repo
 2. Make sure you have configured the env-variables
 3. `npm install`
-3. `npm start`
+4. `npm start`

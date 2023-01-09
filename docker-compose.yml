@@ -1,20 +1,21 @@
+# This docker-compose.yaml serves as development environment.
 version: "3.8"
 services:
-  web:
-    image: node:15.3.0-alpine3.10
-    ports:
-      - 4200:4200
-    working_dir: /home/node/app
-    volumes:
-      - ./:/home/node/app
-    environment:
-      - REDIS_URL=redis://redis:6379
-      - PORT=4200
-    user: node
-    command: npm run watch
-  redis:
-    image: redis:6.0
-    command: redis-server /usr/local/etc/redis/redis.conf --appendonly yes
-    volumes:
-      - ./redis-data/:/data
-      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    web:
+        image: node:15.3.0-alpine3.10
+        ports:
+            - 4200:4200
+        working_dir: /home/node/app
+        volumes:
+            - ./:/home/node/app
+        environment:
+            - REDIS_URL=redis://redis:6379
+            - PORT=4200
+        user: node
+        command: npm run watch
+    redis:
+        image: redis:6.0
+        command: redis-server /usr/local/etc/redis/redis.conf --appendonly yes
+        volumes:
+            - ./redis-data/:/data
+            - ./redis.conf:/usr/local/etc/redis/redis.conf

@@ -10,7 +10,8 @@
     "start": "node dist/index.js",
     "dev": "node --inspect=5858 -r ts-node/register/transpile-only index.ts",
     "watch": "nodemon --watch lib --watch index.ts -e js,ts --exec 'npm run dev'",
-    "postinstall": "tsc --outDir dist --skipLibCheck || exit 0"
+    "build": "tsc --outDir dist --skipLibCheck || exit 0",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@types/winston": "^2.4.4",
