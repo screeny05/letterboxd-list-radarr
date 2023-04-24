@@ -16,7 +16,7 @@
   "dependencies": {
     "@types/winston": "^2.4.4",
     "axios": "^0.27.2",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "kanpai-scraper": "^0.1.0",
     "p-limit": "^2.2.0",
     "read-pkg-up": "^7.0.1",
