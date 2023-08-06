@@ -43,11 +43,14 @@ app.get(/(.*)/, async (req, res) => {
     let posters: LetterboxdPoster[];
 
     try {
-        appLogger.info(`Fetching posters for ${slug}.`);
+        appLogger.info(`Fetching posters for ${slug}`);
         posters = await fetchPostersFromSlug(slug);
+        if (!Array.isArray(posters)) {
+            throw new Error(`Fetching posters failed for ${slug}`);
+        }
     } catch (e: any) {
         isFinished = true;
-        appLogger.error(`Failed to fetch posters for ${slug} - ${e.message}.`);
+        appLogger.error(`Failed to fetch posters for ${slug} - ${e.message}`);
         chunk.fail(404, e.message);
         return;
     }
