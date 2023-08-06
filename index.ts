@@ -39,6 +39,9 @@ app.get(/(.*)/, async (req, res) => {
     });
 
     const slug = normalizeSlug(req.params[0]);
+    const limit = req.query.limit
+        ? Number.parseInt(req.query.limit)
+        : undefined;
 
     let posters: LetterboxdPoster[];
 
@@ -47,6 +50,9 @@ app.get(/(.*)/, async (req, res) => {
         posters = await fetchPostersFromSlug(slug);
         if (!Array.isArray(posters)) {
             throw new Error(`Fetching posters failed for ${slug}`);
+        }
+        if (limit) {
+            posters = posters.slice(0, limit);
         }
     } catch (e: any) {
         isFinished = true;

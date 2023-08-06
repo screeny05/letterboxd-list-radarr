@@ -22,7 +22,7 @@ export default async function get(url: string): Promise<string> {
         axiosLogger.error(
             `Tried accessing robots.txt disallowed URL (${url}).`
         );
-        throw new Error("Disallowed URL");
+        throw new Error("Disallowed URL according to robots.txt");
     }
 
     const response = await instance.get(url);

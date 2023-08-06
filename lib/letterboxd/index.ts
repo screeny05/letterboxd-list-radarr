@@ -1,24 +1,31 @@
 import { getCollection } from "./collection";
 import { getListCached, LetterboxdPoster } from "./list";
 import { getTaggedLists } from "./tagged-lists";
+import { getCachedFilmsPopular } from "./films-popular";
 
 const COLLECTION_REGEX = /^\/films\/in\/.*$/;
+const FILMS_POPULAR_REGEX = /^\/films\/popular\/.*?$/;
 const REVIEW_REGEX = /^\/reviews\/.*$/;
 const TAGGED_LISTS_REGEX = /^\/.*\/tag\/.*\/lists\/$/;
 
-
-export const fetchPostersFromSlug = async (slug: string): Promise<LetterboxdPoster[]> => {
-    if(COLLECTION_REGEX.test(slug)){
+export const fetchPostersFromSlug = async (
+    slug: string
+): Promise<LetterboxdPoster[]> => {
+    if (COLLECTION_REGEX.test(slug)) {
         return await getCollection(slug);
     }
 
-    if(TAGGED_LISTS_REGEX.test(slug)){
+    if (TAGGED_LISTS_REGEX.test(slug)) {
         return await getTaggedLists(slug);
     }
 
-    if(REVIEW_REGEX.test(slug)){
-        throw new Error('Review lists are not supported.');
+    if (FILMS_POPULAR_REGEX.test(slug)) {
+        return await getCachedFilmsPopular(slug);
+    }
+
+    if (REVIEW_REGEX.test(slug)) {
+        throw new Error("Review lists are not supported.");
     }
 
     return await getListCached(slug);
-}
+};

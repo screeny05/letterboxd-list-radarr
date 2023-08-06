@@ -1,6 +1,6 @@
 {
     "name": "letterboxd-list-radarr",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "description": "Convert Letterboxd-list to consumable data",
     "main": "index.js",
     "author": "Sebastian Langer <sl@scn.cx>",
@@ -8,7 +8,7 @@
     "license": "MIT",
     "scripts": {
         "start": "node dist/index.js",
-        "dev": "node --inspect=5858 -r ts-node/register/transpile-only index.ts",
+        "dev": "LOG_LEVEL=debug node --inspect=5858 -r ts-node/register/transpile-only index.ts",
         "watch": "nodemon --watch lib --watch index.ts -e js,ts --exec 'npm run dev'",
         "build": "tsc --outDir dist --skipLibCheck || exit 0",
         "postinstall": "npm run build"

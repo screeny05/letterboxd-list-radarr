@@ -6,7 +6,7 @@ Connect radarr to letterboxd.com lists
 
 This service is hosted on render. That way you don't have to run the service yourself (but you can, see below).
 
-### Radarr v3
+### Radarr v3 and up
 
 1. Configure a new list in radarr, using the _Custom Lists_ provider.
 2. Set _List URL_ to `https://letterboxd-list-radarr.onrender.com` followed by the path to your list in letterboxd. For example: `https://letterboxd-list-radarr.onrender.com/screeny05/list/jackie-chan-the-definitive-list/`
@@ -21,7 +21,7 @@ If there are any problems with v3, feel free to open an issue.
 2. Set _Radarr API URL_ to `https://letterboxd-list-radarr.onrender.com` (or your custom one, if you choose self-hosting)
 3. Set _Path to list_ to whatever appears in the URL for the list of your choosing after `letterboxd.com`.
 
-Supported Lists:
+### Supported Lists:
 
 -   Watchilsts: https://letterboxd.com<b>/screeny05/watchlist/</b>
 -   Regular Lists: https://letterboxd.com<b>/screeny05/list/jackie-chan-the-definitive-list/</b>
@@ -32,13 +32,28 @@ Supported Lists:
     -   Writer: https://letterboxd.com<b>/writer/charlie-kaufman/</b>
     -   Etc.
 -   Collections: https://letterboxd.com<b>/films/in/halloween-collection/</b>
+-   Popular Movies: https://letterboxd.com<b>/films/popular/</b>
+    -   Note that neither filtering nor sorting is allowed according to the robots.txt. So URLs like /films/popular/genre/action, /films/popular/decade/2020s /films/by/release, etc. are not supported
+    -   This list is limited to 10 pages, so a maximum of 720 movies are returned. You can limit this number with the `limit`-option
 -   Lists tagged by User are not supported. Please use links to the lists themself instead.
 
 Others may be supported, but are not tested, yet.
 
+### Supported options
+
+This is a list of all options you can provide to this scraper, You can set them by attaching a get-parameter to the URL like this:
+
+`/actor/tom-hanks/?<key>=<value>`
+
+Where `key` is the name of the option and `value` is the value you want to provide.
+
+The following options are currently supported:
+
+-   `limit` - Return only a maximum number of movies. This is useful for very large lists like /films/popular/
+
 ## FAQ
 
-### The API always returns `Disallowed URL`
+### The API always returns `Disallowed URL according to robots.txt`
 
 This means that letterboxd.com does not allow this URL to be crawled per their [robots.txt](https://letterboxd.com/robots.txt). Your URL probably contains sorting or expensive queries by letterboxd. Check the linked file to ensure your given URL does not match any of the listed paths.
 
@@ -108,6 +123,8 @@ Following environment-params are supported:
 
 -   `REDIS_URL` - A [redis connection string](https://github.com/ServiceStack/ServiceStack.Redis#redis-connection-strings) to your redis-instance
 -   `PORT` - The http-port which the application listens on
+-   `LOG_LEVEL` - Set to `debug` for more info. Defaults to `info`
+-   `USER_AGENT` - Allows you to set your own user-agent string
 
 1. Clone this repo
 2. Make sure you have configured the env-variables
