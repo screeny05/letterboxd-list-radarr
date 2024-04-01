@@ -8,6 +8,6 @@ export const transformLetterboxdMovieToRadarr = (movie: LetterboxdMovieDetails):
         title: movie.name,
         release_year: movie.published,
         clean_title: movie.slug,
-        adult: false
+        director: movie.director
     }
 };
