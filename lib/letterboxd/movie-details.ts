@@ -55,6 +55,12 @@ export const getMovieDetail = async (slug: string) => {
         {
             name: ".headline-1",
             published: "#featured-film-header .number",
+            director: [
+                '#featured-film-header',
+                'p',
+                'a',
+                '.prettify'
+            ],
             imdb: [
                 '[data-track-action="imdb" i]',
                 "[href]",
