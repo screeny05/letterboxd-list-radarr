@@ -4,7 +4,7 @@ services:
     env: node
     buildCommand: npm install
     startCommand: npm start
-    repo: https://github.com/screeny05/letterboxd-list-radarr.git
+    repo: https://github.com/atran/letterboxd-list-radarr.git
     plan: free
     envVars:
       - key: REDIS_URL
