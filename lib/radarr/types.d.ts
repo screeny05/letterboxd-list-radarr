@@ -4,5 +4,5 @@ export interface RadarrMovieDetails {
     title: string;
     release_year: string;
     clean_title: string;
-    adult: boolean;
+    director: string;
 }
