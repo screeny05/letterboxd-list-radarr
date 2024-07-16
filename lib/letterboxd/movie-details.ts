@@ -54,7 +54,7 @@ export const getMovieDetail = async (slug: string) => {
         `${LETTERBOXD_ORIGIN}${slug}`,
         {
             name: ".headline-1",
-            published: "#featured-film-header .number",
+            published: "a[href^='/films/year']",
             imdb: [
                 '[data-track-action="imdb" i]',
                 "[href]",
