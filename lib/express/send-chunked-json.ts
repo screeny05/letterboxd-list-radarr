@@ -16,7 +16,7 @@ export const sendChunkedJson = (res: Response) => {
     const sendKeepAlive = () => res.write("\r\n");
     const keepAliveInterval = setInterval(sendKeepAlive, KEEP_ALIVE_INTERVAL);
 
-    return {
+    const chunk = {
         push(chunk: any) {
             res.write(isFirstChunk ? "[" : ",");
             res.write(JSON.stringify(chunk));
@@ -32,14 +32,12 @@ export const sendChunkedJson = (res: Response) => {
             res.end("]");
         },
         fail(code: number, message: string) {
-            clearInterval(keepAliveInterval);
             res.status(code);
 
-            res.write(JSON.stringify({ message }));
-            if (!isFirstChunk) {
-                res.write("]");
-            }
-            res.end();
+            chunk.push({ message });
+            chunk.end();
         },
     };
+
+    return chunk;
 };

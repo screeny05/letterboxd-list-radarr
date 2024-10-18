@@ -53,7 +53,7 @@ export const getFilmsPopularPaginated = async (
         [
             ".poster-list .listitem",
             {
-                slug: [".poster", "[data-film-slug]"],
+                slug: [".poster", "[data-target-link]"],
                 title: ["img", "[alt]"],
             },
         ]

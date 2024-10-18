@@ -9,6 +9,7 @@ import {
 import { sendChunkedJson } from "./lib/express/send-chunked-json";
 import { fetchPostersFromSlug } from "./lib/letterboxd";
 import { logger } from "./lib/logger";
+import { cache } from "./lib/cache";
 
 const appLogger = logger.child({ module: "App" });
 
@@ -31,11 +32,16 @@ app.get(/(.*)/, async (req, res) => {
     // Abort fetching on client close
     let isConnectionOpen = true;
     let isFinished = false;
-    req.connection.on("close", () => {
+    req.connection.once("close", () => {
         isConnectionOpen = false;
         if (!isFinished) {
             appLogger.warn("Client closed connection before finish.");
         }
+    });
+
+    cache.once("error", (err) => {
+        chunk.fail(500, err.message);
+        isConnectionOpen = false;
     });
 
     const slug = normalizeSlug(req.params[0]);
@@ -58,6 +64,7 @@ app.get(/(.*)/, async (req, res) => {
         isFinished = true;
         appLogger.error(`Failed to fetch posters for ${slug} - ${e.message}`);
         chunk.fail(404, e.message);
+        isConnectionOpen = false;
         return;
     }
 

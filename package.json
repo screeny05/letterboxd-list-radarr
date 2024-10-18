@@ -1,6 +1,6 @@
 {
     "name": "letterboxd-list-radarr",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Convert Letterboxd-list to consumable data",
     "main": "index.js",
     "author": "Sebastian Langer <sl@scn.cx>",

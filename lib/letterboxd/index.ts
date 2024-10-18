@@ -4,13 +4,14 @@ import { getTaggedLists } from "./tagged-lists";
 import { getCachedFilmsPopular } from "./films-popular";
 
 const COLLECTION_REGEX = /^\/films\/in\/.*$/;
+const TAGGED_LISTS_REGEX = /^\/.*\/tag\/.*\/lists\/$/;
 const FILMS_POPULAR_REGEX = /^\/films\/popular\/.*?$/;
 const REVIEW_REGEX = /^\/reviews\/.*$/;
-const TAGGED_LISTS_REGEX = /^\/.*\/tag\/.*\/lists\/$/;
 
 export const fetchPostersFromSlug = async (
     slug: string
 ): Promise<LetterboxdPoster[]> => {
+    // https://letterboxd.com/films/in/smile-collection/
     if (COLLECTION_REGEX.test(slug)) {
         return await getCollection(slug);
     }
@@ -19,6 +20,7 @@ export const fetchPostersFromSlug = async (
         return await getTaggedLists(slug);
     }
 
+    // https://letterboxd.com/films/popular
     if (FILMS_POPULAR_REGEX.test(slug)) {
         return await getCachedFilmsPopular(slug);
     }

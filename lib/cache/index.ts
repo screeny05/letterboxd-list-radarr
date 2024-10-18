@@ -1,6 +1,17 @@
 import redis from "redis";
+import { logger } from "../logger";
 
-const cache = redis.createClient({ url: process.env.REDIS_URL });
+const log = logger.child({ module: "Cache" });
+
+export const cache = redis.createClient({ url: process.env.REDIS_URL });
+
+cache.on("error", (err) => {
+    log.error("Redis error", err);
+});
+
+cache.on("ready", () => {
+    log.info("Redis ready");
+});
 
 export const has = (key: string): Promise<boolean> =>
     new Promise((resolve, reject) => {
