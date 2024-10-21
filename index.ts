@@ -39,11 +39,6 @@ app.get(/(.*)/, async (req, res) => {
         }
     });
 
-    cache.once("error", (err) => {
-        chunk.fail(500, err.message);
-        isConnectionOpen = false;
-    });
-
     const slug = normalizeSlug(req.params[0]);
     const limit = req.query.limit
         ? Number.parseInt(req.query.limit)
@@ -62,8 +57,8 @@ app.get(/(.*)/, async (req, res) => {
         }
     } catch (e: any) {
         isFinished = true;
-        appLogger.error(`Failed to fetch posters for ${slug} - ${e.message}`);
-        chunk.fail(404, e.message);
+        appLogger.error(`Failed to fetch posters for ${slug} - ${e?.message}`);
+        chunk.fail(404, e?.message);
         isConnectionOpen = false;
         return;
     }
@@ -79,12 +74,19 @@ app.get(/(.*)/, async (req, res) => {
         chunk.push(transformLetterboxdMovieToRadarr(movie));
     };
 
-    await getMoviesDetailCached(
-        movieSlugs,
-        7,
-        onMovie,
-        () => !isConnectionOpen
-    );
+    try {
+        await getMoviesDetailCached(
+            movieSlugs,
+            7,
+            onMovie,
+            () => !isConnectionOpen
+        );
+    } catch (e: any) {
+        appLogger.error(`Failed to fetch movies for ${slug} - ${e?.message}`);
+        chunk.fail(404, e?.message);
+        isConnectionOpen = false;
+        return;
+    }
 
     isFinished = true;
     chunk.end();
