@@ -3,7 +3,7 @@ import { Response } from "express";
 // Send keep-alive every 5 seconds.
 const KEEP_ALIVE_INTERVAL = 5 * 1000;
 
-// If no push happened after 60 seconds, close connection.
+// If no push happened after 30 seconds, close connection.
 const PUSH_TIMEOUT = 30 * 1000;
 
 /**
@@ -31,8 +31,18 @@ export const sendChunkedJson = (res: Response) => {
 
     resetTimeout();
 
+    const clearTimers = () => {
+        clearInterval(keepAliveInterval);
+        clearTimeout(pushTimeout);
+    };
+
     const chunk = {
         push(chunk: any) {
+            if (!res.writable) {
+                clearTimers();
+                return;
+            }
+
             res.write(isFirstChunk ? "[" : ",");
             res.write(JSON.stringify(chunk));
             res.write("\r\n");
@@ -40,8 +50,11 @@ export const sendChunkedJson = (res: Response) => {
             isFirstChunk = false;
         },
         end() {
-            clearInterval(keepAliveInterval);
-            clearTimeout(pushTimeout);
+            clearTimers();
+
+            if (!res.writable) {
+                return;
+            }
 
             if (isFirstChunk) {
                 res.write("[");
@@ -49,6 +62,11 @@ export const sendChunkedJson = (res: Response) => {
             res.end("]");
         },
         fail(code: number, message: string) {
+            if (!res.writable) {
+                clearTimers();
+                return;
+            }
+
             res.status(code);
 
             chunk.push({ message });
