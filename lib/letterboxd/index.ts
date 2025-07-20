@@ -6,7 +6,7 @@ import { getCachedFilmsPopular } from "./films-popular";
 const COLLECTION_REGEX = /^\/films\/in\/.*$/;
 const TAGGED_LISTS_REGEX = /^\/.*\/tag\/.*\/lists\/$/;
 const FILMS_POPULAR_REGEX = /^\/films\/popular\/.*?$/;
-const REVIEW_REGEX = /^\/reviews\/.*$/;
+const REVIEW_REGEX = /^\/.*\/reviews\/.*$/;
 
 export const fetchPostersFromSlug = async (
     slug: string
@@ -26,7 +26,7 @@ export const fetchPostersFromSlug = async (
     }
 
     if (REVIEW_REGEX.test(slug)) {
-        return await getListCached(slug, undefined, {
+        return await getListCached(slug, {
             postersQuery: ".viewing-list .film-poster"
         });
     }
