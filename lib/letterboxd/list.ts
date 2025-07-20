@@ -19,14 +19,19 @@ interface LetterboxdListPage {
     posters: LetterboxdPoster[];
 }
 
+interface GetListOptions {
+    postersQuery?: string;
+}
+
 export const getList = async (
     listSlug: string,
-    onPage?: (page: number) => void
+    onPage?: (page: number) => void,
+    options?: GetListOptions
 ): Promise<LetterboxdPoster[]> => {
     const posters: LetterboxdPoster[] = [];
     let nextPage: number | null = 1;
     while (nextPage) {
-        const result = await getListPaginated(listSlug, nextPage);
+        const result = await getListPaginated(listSlug, nextPage, options);
         if (onPage) {
             onPage(nextPage);
         }
@@ -39,7 +44,8 @@ export const getList = async (
 
 export const getListCached = async (
     listSlug: string,
-    onPage?: (page: number) => void
+    onPage?: (page: number) => void,
+    options?: GetListOptions
 ): Promise<LetterboxdPoster[]> => {
     const cached = await cache.get(listSlug);
     if (cached && Array.isArray(cached)) {
@@ -49,15 +55,20 @@ export const getListCached = async (
         await cache.del(listSlug);
     }
 
-    const posters = await getList(listSlug, onPage);
+    const posters = await getList(listSlug, onPage, options);
     await cache.set(listSlug, posters, LIST_CACHE_TIMEOUT);
     return posters;
 };
 
 export const getListPaginated = async (
     listSlug: string,
-    page: number
+    page: number,
+    options?: GetListOptions
 ): Promise<LetterboxdListPage> => {
+    const {
+        postersQuery = ".poster-list .film-poster"
+    } = options || {};
+
     return await getKanpai<LetterboxdListPage>(
         `${LETTERBOXD_ORIGIN}${listSlug}page/${page}/`,
         {
@@ -67,7 +78,7 @@ export const getListPaginated = async (
                 getFirstMatch(LETTERBOXD_NEXT_PAGE_REGEX),
             ],
             posters: [
-                ".poster-list .film-poster",
+                postersQuery,
                 {
                     slug: ["$", "[data-target-link]"],
                     title: [".image", "[alt]"],

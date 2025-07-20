@@ -26,7 +26,9 @@ export const fetchPostersFromSlug = async (
     }
 
     if (REVIEW_REGEX.test(slug)) {
-        throw new Error("Review lists are not supported.");
+        return await getListCached(slug, undefined, {
+            postersQuery: ".viewing-list .film-poster"
+        });
     }
 
     return await getListCached(slug);
