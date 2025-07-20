@@ -25,16 +25,12 @@ interface GetListOptions {
 
 export const getList = async (
     listSlug: string,
-    onPage?: (page: number) => void,
     options?: GetListOptions
 ): Promise<LetterboxdPoster[]> => {
     const posters: LetterboxdPoster[] = [];
     let nextPage: number | null = 1;
     while (nextPage) {
         const result = await getListPaginated(listSlug, nextPage, options);
-        if (onPage) {
-            onPage(nextPage);
-        }
         posters.push(...result.posters);
         nextPage = Number.parseInt(result.next);
         nextPage = Number.isNaN(nextPage) ? null : nextPage;
@@ -44,7 +40,6 @@ export const getList = async (
 
 export const getListCached = async (
     listSlug: string,
-    onPage?: (page: number) => void,
     options?: GetListOptions
 ): Promise<LetterboxdPoster[]> => {
     const cached = await cache.get(listSlug);
@@ -55,7 +50,7 @@ export const getListCached = async (
         await cache.del(listSlug);
     }
 
-    const posters = await getList(listSlug, onPage, options);
+    const posters = await getList(listSlug, options);
     await cache.set(listSlug, posters, LIST_CACHE_TIMEOUT);
     return posters;
 };
@@ -68,7 +63,6 @@ export const getListPaginated = async (
     const {
         postersQuery = ".poster-list .film-poster"
     } = options || {};
-
     return await getKanpai<LetterboxdListPage>(
         `${LETTERBOXD_ORIGIN}${listSlug}page/${page}/`,
         {
