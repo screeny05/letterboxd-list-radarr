@@ -67,10 +67,10 @@ export const getListPaginated = async (
                 getFirstMatch(LETTERBOXD_NEXT_PAGE_REGEX),
             ],
             posters: [
-                ".poster-grid .react-component",
+                "[data-component-class=\"globals.comps.LazyPoster\"]",
                 {
                     slug: ["$", "[data-target-link]"],
-                    title: [".image", "[alt]"],
+                    title: ["$", "[data-item-name]"],
                 },
             ],
         }
