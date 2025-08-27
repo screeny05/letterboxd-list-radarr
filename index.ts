@@ -43,6 +43,9 @@ app.get(/(.*)/, async (req, res) => {
     const limit = req.query.limit
         ? Number.parseInt(req.query.limit)
         : undefined;
+    const errorOnEmpty = req.query.errorOnEmpty
+        ? req.query.errorOnEmpty !== "false"
+        : true;
 
     let posters: LetterboxdPoster[];
 
@@ -55,10 +58,21 @@ app.get(/(.*)/, async (req, res) => {
         if (limit) {
             posters = posters.slice(0, limit);
         }
+        appLogger.debug(`Fetched ${posters.length} posters`);
     } catch (e: any) {
         isFinished = true;
         appLogger.error(`Failed to fetch posters for ${slug} - ${e?.message}`);
         chunk.fail(404, e?.message);
+        isConnectionOpen = false;
+        return;
+    }
+
+    if (posters.length === 0 && errorOnEmpty) {
+        isFinished = true;
+        chunk.fail(
+            404,
+            "List is empty or letterboxd page structure has changed so we can't fetch the list anymore. To disable this error, set ?errorOnEmpty=false"
+        );
         isConnectionOpen = false;
         return;
     }

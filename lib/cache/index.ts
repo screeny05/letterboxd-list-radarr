@@ -18,7 +18,7 @@ cache.on("ready", () => {
 export const has = (key: string): Promise<boolean> =>
     new Promise((resolve, reject) => {
         if (!key || !cache.connected) {
-            return false;
+            return resolve(false);
         }
         cache.exists(key, (err, data) => {
             if (err) {

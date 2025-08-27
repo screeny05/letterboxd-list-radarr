@@ -24,7 +24,11 @@ export const sendChunkedJson = (res: Response) => {
     const resetTimeout = () => {
         clearTimeout(pushTimeout);
         pushTimeout = setTimeout(
-            () => chunk.fail(408, "No more data received."),
+            () =>
+                chunk.fail(
+                    504,
+                    "Server closed connection. No more data received."
+                ),
             PUSH_TIMEOUT
         );
     };

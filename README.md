@@ -50,6 +50,7 @@ Where `key` is the name of the option and `value` is the value you want to provi
 The following options are currently supported:
 
 -   `limit` - Return only a maximum number of movies. This is useful for very large lists like /films/popular/
+-   `errorOnEmpty` - The API will return a 404 error if the list is empty. If set to `false`, the API will return an empty list instead. Defaults to `true`.
 
 ## FAQ
 
@@ -129,4 +130,4 @@ Following environment-params are supported:
 1. Clone this repo
 2. Make sure you have configured the env-variables
 3. `npm install`
-4. `npm start`
+4. `npm run watch`
