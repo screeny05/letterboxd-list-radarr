@@ -51,9 +51,9 @@ export const getFilmsPopularPaginated = async (
     return await getKanpai<LetterboxdPoster[]>(
         `${LETTERBOXD_ORIGIN}/films/ajax/${path}page/${page}/`,
         [
-            ".poster-list .listitem",
+            ".poster-list .posteritem",
             {
-                slug: [".poster", "[data-target-link]"],
+                slug: [".react-component", "[data-target-link]"],
                 title: ["img", "[alt]"],
             },
         ]
