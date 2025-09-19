@@ -1,3 +1,7 @@
+# 1.2.2
+
+-   Fix selector for lists showing as grid per default, e.g. /actor/tom-hanks/
+
 # 1.2.1
 
 -   Unify selectors for regular list and popular list (Thank you @benjroy)
