@@ -1,3 +1,7 @@
+# 1.2.1
+
+-   Unify selectors for regular list and popular list (Thank you @benjroy)
+
 # 1.2.0
 
 -   Throw 404 error on empty lists by default.
