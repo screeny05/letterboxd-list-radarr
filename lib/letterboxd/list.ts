@@ -67,7 +67,7 @@ export const getListPaginated = async (
                 getFirstMatch(LETTERBOXD_NEXT_PAGE_REGEX),
             ],
             posters: [
-                "[data-component-class=\"LazyPoster\"]",
+                '.posteritem > .react-component, .poster-list [data-component-class*="LazyPoster"], .poster-list [data-poster-url*="film"]',
                 {
                     slug: ["$", "[data-target-link]"],
                     title: ["$", "[data-item-name]"],
