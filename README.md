@@ -35,6 +35,9 @@ If there are any problems with v3, feel free to open an issue.
 -   Popular Movies: https://letterboxd.com<b>/films/popular/</b>
     -   Note that neither filtering nor sorting is allowed according to the robots.txt. So URLs like /films/popular/genre/action, /films/popular/decade/2020s /films/by/release, etc. are not supported
     -   This list is limited to 10 pages, so a maximum of 720 movies are returned. You can limit this number with the `limit`-option
+-   Studios: https://letterboxd.com<b>/studio/a24/</b>
+    -   As with Popular Movies, filtering/sorting sub-paths like /studio/a24/genre/horror or /studio/a24/by/rating are not supported per the robots.txt
+    -   Only the default (most popular) page of films is returned. Letterboxd's Cloudflare protection blocks scraping of further studio pages, so pagination is not supported here.
 -   Lists tagged by User are not supported. Please use links to the lists themself instead.
 
 Others may be supported, but are not tested, yet.
