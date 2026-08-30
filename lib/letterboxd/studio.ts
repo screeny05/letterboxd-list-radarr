@@ -3,6 +3,9 @@ import { LetterboxdPoster } from "./list";
 import { getCachedMovieDetail } from "./movie-details";
 import { getKanpai, LETTERBOXD_ORIGIN } from "./util";
 import * as cache from "../cache/index";
+import { logger } from "../logger";
+
+const studioLogger = logger.child({ module: "Studio" });
 
 // Cache studios for 30min, same as regular lists
 const STUDIO_CACHE_TIMEOUT = 30 * 60;
@@ -32,14 +35,19 @@ export const getStudio = async (
 
     // Each studio entry is enriched with its imdb/tmdb ids.
     const limit = pLimit(7);
-    return await Promise.all(
+    const films = await Promise.all(
         posters.map((poster) =>
-            limit(async () => {
-                const detail = await getCachedMovieDetail(poster.slug);
-                return { ...poster, imdb: detail.imdb, tmdb: detail.tmdb };
+            limit(async (): Promise<LetterboxdStudioFilm | undefined> => {
+                try {
+                    const detail = await getCachedMovieDetail(poster.slug);
+                    return { ...poster, imdb: detail.imdb, tmdb: detail.tmdb };
+                } catch (e: any) {
+                    studioLogger.error(`Error fetching '${poster.slug}'.`);
+                }
             })
         )
     );
+    return films.filter((film): film is LetterboxdStudioFilm => !!film);
 };
 
 export const getStudioCached = async (
