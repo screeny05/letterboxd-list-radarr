@@ -1,3 +1,8 @@
+# 1.3.0
+
+-   Add support for Studio filmographies (`/studio/a24/`, etc.)
+-   Only the default (most popular) page is returned. Further pagination is blocked by Cloudflare (see `lib/letterboxd/studio.ts`).
+
 # 1.2.2
 
 -   Fix selector for lists showing as grid per default, e.g. /actor/tom-hanks/
