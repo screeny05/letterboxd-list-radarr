@@ -5,6 +5,9 @@ const log = logger.child({ module: "Cache" });
 
 export const cache = redis.createClient({
     url: process.env.REDIS_URL,
+    ...(process.env.REDIS_URL?.startsWith("rediss://")
+        ? { tls: { rejectUnauthorized: false } }
+        : {}),
 });
 
 cache.on("error", (err) => {
