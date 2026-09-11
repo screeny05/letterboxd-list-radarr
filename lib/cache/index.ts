@@ -28,10 +28,12 @@ export const has = (key: string): Promise<boolean> =>
         });
     });
 
-export const get = <T = any>(key: string): Promise<T> =>
+export const get = <T = any>(key: string): Promise<T | undefined> =>
     new Promise((resolve, reject) => {
-        if (!cache.connected) {
-            reject(undefined);
+        if (!key || !cache.connected) {
+            // Treat an unavailable cache as a miss so we fall back to
+            // fetching live instead of failing the request.
+            return resolve(undefined);
         }
         cache.get(key, (err, data) => {
             if (err) {
@@ -45,7 +47,7 @@ export const get = <T = any>(key: string): Promise<T> =>
 export const set = (key: string, value: any, ttl?: number): Promise<void> =>
     new Promise((resolve, reject) => {
         if (!cache.connected) {
-            resolve();
+            return resolve();
         }
 
         const cb = (err: any, data: any) => {
@@ -68,7 +70,7 @@ export const set = (key: string, value: any, ttl?: number): Promise<void> =>
 export const del = (key: string): Promise<void> =>
     new Promise((resolve, reject) => {
         if (!cache.connected) {
-            resolve();
+            return resolve();
         }
 
         cache.del(key, (err) => {
