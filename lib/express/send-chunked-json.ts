@@ -1,4 +1,7 @@
 import { Response } from "express";
+import { logger } from "../logger";
+
+const chunkLogger = logger.child({ module: "SendChunkedJson" });
 
 // Send keep-alive every 5 seconds.
 const KEEP_ALIVE_INTERVAL = 5 * 1000;
@@ -12,15 +15,38 @@ const PUSH_TIMEOUT = 30 * 1000;
 export const sendChunkedJson = (res: Response) => {
     let isFirstChunk = true;
 
+    // `res.writable` stays true after end on older node, so track it ourselves.
+    let isEnded = false;
+
     res.header("Content-Type", "application/json");
     res.header("Transfer-Encoding", "chunked");
 
+    let keepAliveInterval: NodeJS.Timeout;
+    let pushTimeout: NodeJS.Timeout;
+
+    const clearTimers = () => {
+        clearInterval(keepAliveInterval);
+        clearTimeout(pushTimeout);
+    };
+
+    const markEnded = () => {
+        isEnded = true;
+        clearTimers();
+    };
+
+    const isWritable = () => !isEnded && res.writable;
+
     // Send regular keep-alive to prevent loadbalancer timeouts
-    const sendKeepAlive = () => res.write("\r\n");
-    const keepAliveInterval = setInterval(sendKeepAlive, KEEP_ALIVE_INTERVAL);
+    const sendKeepAlive = () => {
+        if (!isWritable()) {
+            markEnded();
+            return;
+        }
+        res.write("\r\n");
+    };
+    keepAliveInterval = setInterval(sendKeepAlive, KEEP_ALIVE_INTERVAL);
 
     // Close connection ourselves if there is no push after a certain timeout
-    let pushTimeout: NodeJS.Timeout;
     const resetTimeout = () => {
         clearTimeout(pushTimeout);
         pushTimeout = setTimeout(
@@ -35,15 +61,21 @@ export const sendChunkedJson = (res: Response) => {
 
     resetTimeout();
 
-    const clearTimers = () => {
-        clearInterval(keepAliveInterval);
-        clearTimeout(pushTimeout);
-    };
+    // Without a listener a stream error would take down the process.
+    res.on("error", (e: Error) => {
+        markEnded();
+        chunkLogger.warn(`Response stream error - ${e?.message}`);
+    });
+
+    res.once("close", markEnded);
 
     const chunk = {
+        get isEnded() {
+            return isEnded;
+        },
         push(chunk: any) {
-            if (!res.writable) {
-                clearTimers();
+            if (!isWritable()) {
+                markEnded();
                 return;
             }
 
@@ -54,11 +86,12 @@ export const sendChunkedJson = (res: Response) => {
             isFirstChunk = false;
         },
         end() {
-            clearTimers();
-
-            if (!res.writable) {
+            if (!isWritable()) {
+                markEnded();
                 return;
             }
+
+            markEnded();
 
             if (isFirstChunk) {
                 res.write("[");
@@ -66,12 +99,14 @@ export const sendChunkedJson = (res: Response) => {
             res.end("]");
         },
         fail(code: number, message: string) {
-            if (!res.writable) {
-                clearTimers();
+            if (!isWritable()) {
+                markEnded();
                 return;
             }
 
-            res.status(code);
+            if (!res.headersSent) {
+                res.status(code);
+            }
 
             chunk.push({ message });
             chunk.end();

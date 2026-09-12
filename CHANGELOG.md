@@ -2,6 +2,7 @@
 
 - Add support for Studio filmographies (`/studio/a24/`, etc.)
 - Only the default (most popular) page is returned. Further pagination is blocked by Cloudflare (see `lib/letterboxd/studio.ts`).
+- Fix broken write-after-flush in chunkstreamer
 
 # 1.2.3
 

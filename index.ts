@@ -34,7 +34,7 @@ app.get(/(.*)/, async (req, res) => {
     let isFinished = false;
     req.connection.once("close", () => {
         isConnectionOpen = false;
-        if (!isFinished) {
+        if (!isFinished && !chunk.isEnded) {
             appLogger.warn("Client closed connection before finish.");
         }
     });
@@ -93,7 +93,7 @@ app.get(/(.*)/, async (req, res) => {
             movieSlugs,
             7,
             onMovie,
-            () => !isConnectionOpen
+            () => !isConnectionOpen || chunk.isEnded
         );
     } catch (e: any) {
         appLogger.error(`Failed to fetch movies for ${slug} - ${e?.message}`);
