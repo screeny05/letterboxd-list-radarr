@@ -20,16 +20,12 @@ interface LetterboxdListPage {
 }
 
 export const getList = async (
-    listSlug: string,
-    onPage?: (page: number) => void
+    listSlug: string
 ): Promise<LetterboxdPoster[]> => {
     const posters: LetterboxdPoster[] = [];
     let nextPage: number | null = 1;
     while (nextPage) {
         const result = await getListPaginated(listSlug, nextPage);
-        if (onPage) {
-            onPage(nextPage);
-        }
         posters.push(...result.posters);
         nextPage = Number.parseInt(result.next);
         nextPage = Number.isNaN(nextPage) ? null : nextPage;
@@ -38,8 +34,7 @@ export const getList = async (
 };
 
 export const getListCached = async (
-    listSlug: string,
-    onPage?: (page: number) => void
+    listSlug: string
 ): Promise<LetterboxdPoster[]> => {
     const cached = await cache.get(listSlug);
     if (cached && Array.isArray(cached)) {
@@ -49,7 +44,7 @@ export const getListCached = async (
         await cache.del(listSlug);
     }
 
-    const posters = await getList(listSlug, onPage);
+    const posters = await getList(listSlug);
     await cache.set(listSlug, posters, LIST_CACHE_TIMEOUT);
     return posters;
 };

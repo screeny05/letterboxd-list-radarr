@@ -26,6 +26,7 @@ If there are any problems with v3, feel free to open an issue.
 -   Watchlists: https://letterboxd.com<b>/screeny05/watchlist/</b>
 -   Regular Lists: https://letterboxd.com<b>/screeny05/list/jackie-chan-the-definitive-list/</b>
 -   Watched Movies: https://letterboxd.com<b>/screeny05/films/</b>
+-   Reviews: https://letterboxd.com<b>/screeny05/reviews/</b>
 -   Filmography:
     -   Actor: https://letterboxd.com<b>/actor/tom-hanks/</b>
     -   Director: https://letterboxd.com<b>/director/alfred-hitchcock/</b>

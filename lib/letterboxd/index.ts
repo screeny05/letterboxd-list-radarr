@@ -8,7 +8,6 @@ const COLLECTION_REGEX = /^\/films\/in\/.*$/;
 const TAGGED_LISTS_REGEX = /^\/.*\/tag\/.*\/lists\/$/;
 const FILMS_POPULAR_REGEX = /^\/films\/popular\/.*?$/;
 const STUDIO_REGEX = /^\/studio\/.*$/;
-const REVIEW_REGEX = /^\/reviews\/.*$/;
 
 export const fetchPostersFromSlug = async (
     slug: string
@@ -30,10 +29,6 @@ export const fetchPostersFromSlug = async (
     // https://letterboxd.com/studio/a24/ - only the default page is fetched, see studio.ts
     if (STUDIO_REGEX.test(slug)) {
         return await getStudioCached(slug);
-    }
-
-    if (REVIEW_REGEX.test(slug)) {
-        throw new Error("Review lists are not supported.");
     }
 
     return await getListCached(slug);
