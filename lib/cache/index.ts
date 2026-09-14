@@ -18,21 +18,39 @@ cache.on("ready", () => {
     log.info("Redis ready");
 });
 
+let isDegraded = false;
+
+const onCommandFailed = (command: string, key: string, err: any): void => {
+    const message = `Redis ${command} failed for '${key}', continuing without cache`;
+    if (isDegraded) {
+        log.debug(message, err);
+        return;
+    }
+    isDegraded = true;
+    log.warn(message, err);
+};
+
+const onCommandSucceeded = (): void => {
+    isDegraded = false;
+};
+
 export const has = (key: string): Promise<boolean> =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
         if (!key || !cache.connected) {
             return resolve(false);
         }
         cache.exists(key, (err, data) => {
             if (err) {
-                return reject(err);
+                onCommandFailed("exists", key, err);
+                return resolve(false);
             }
+            onCommandSucceeded();
             resolve(data === 1);
         });
     });
 
 export const get = <T = any>(key: string): Promise<T | undefined> =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
         if (!key || !cache.connected) {
             // Treat an unavailable cache as a miss so we fall back to
             // fetching live instead of failing the request.
@@ -40,23 +58,30 @@ export const get = <T = any>(key: string): Promise<T | undefined> =>
         }
         cache.get(key, (err, data) => {
             if (err) {
-                log.error("Redis callback errored", err);
-                return reject(err);
+                onCommandFailed("get", key, err);
+                return resolve(undefined);
             }
-            resolve(JSON.parse(data));
+            onCommandSucceeded();
+            try {
+                resolve(JSON.parse(data));
+            } catch (e) {
+                onCommandFailed("get", key, e);
+                resolve(undefined);
+            }
         });
     });
 
 export const set = (key: string, value: any, ttl?: number): Promise<void> =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
         if (!cache.connected) {
             return resolve();
         }
 
-        const cb = (err: any, data: any) => {
+        const cb = (err: any) => {
             if (err) {
-                log.error("Redis callback errored", err);
-                return reject(err);
+                onCommandFailed("set", key, err);
+            } else {
+                onCommandSucceeded();
             }
             resolve();
         };
@@ -71,15 +96,16 @@ export const set = (key: string, value: any, ttl?: number): Promise<void> =>
     });
 
 export const del = (key: string): Promise<void> =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
         if (!cache.connected) {
             return resolve();
         }
 
         cache.del(key, (err) => {
             if (err) {
-                log.error("Redis callback errored", err);
-                return reject(err);
+                onCommandFailed("del", key, err);
+            } else {
+                onCommandSucceeded();
             }
             resolve();
         });

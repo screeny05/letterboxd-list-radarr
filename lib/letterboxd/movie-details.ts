@@ -5,6 +5,8 @@ import { logger } from "../logger";
 
 const moviesLogger = logger.child({ module: "MoviesDetails" });
 
+const MOVIE_CACHE_TIMEOUT = 30 * 24 * 60 * 60;
+
 const IMDB_REGEX = /imdb\.com\/title\/(.*?)(\/|$)/i;
 const TMDB_REGEX = /themoviedb\.org\/movie\/(.*?)(\/|$)/;
 
@@ -72,17 +74,16 @@ export const getMovieDetail = async (slug: string) => {
 };
 
 export const getCachedMovieDetail = async (slug: string) => {
-    if (await cache.has(slug)) {
+    const cached = await cache.get<LetterboxdMovieDetails>(slug);
+    if (cached) {
         moviesLogger.debug(`Fetched '${slug}' from redis.`);
-        return await cache.get<LetterboxdMovieDetails>(slug);
+        return cached;
     }
 
     const data = await getMovieDetail(slug);
     moviesLogger.debug(`Fetched '${slug}' live.`);
 
-    // We cache movies indefinitely, assuming they don't change.
-    // Be sure to configure redis with a maxmemory and an eviction policy or this will eat all your RAM
-    await cache.set(slug, data);
+    await cache.set(slug, data, MOVIE_CACHE_TIMEOUT);
 
     return data;
 };
