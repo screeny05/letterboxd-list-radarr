@@ -11,11 +11,24 @@ services:
         environment:
             - REDIS_URL=redis://redis:6379
             - PORT=4200
+            # Uncomment to enable FlareSolverr proxy for bypassing Cloudflare
+            # - FLARESOLVERR_URL=http://flaresolverr:8191/v1
         user: node
         command: npm run watch
+        depends_on:
+            - redis
     redis:
         image: redis:6.0
         command: redis-server /usr/local/etc/redis/redis.conf --appendonly yes
         volumes:
             - ./redis-data/:/data
             - ./redis.conf:/usr/local/etc/redis/redis.conf
+    flaresolverr:
+        image: ghcr.io/flaresolverr/flaresolverr:latest
+        ports:
+            - 8191:8191
+        environment:
+            - LOG_LEVEL=info
+            - LOG_HTML=false
+            - CAPTCHA_SOLVER=none
+            - TZ=UTC

@@ -130,6 +130,7 @@ Following environment-params are supported:
 -   `PORT` - The http-port which the application listens on
 -   `LOG_LEVEL` - Set to `debug` for more info. Defaults to `info`
 -   `USER_AGENT` - Allows you to set your own user-agent string
+-   `FLARESOLVERR_URL` - (Optional) URL to [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) instance (e.g., `http://flaresolverr:8191/v1`). When set, routes requests through FlareSolverr to bypass Cloudflare protection
 
 1. Clone this repo
 2. Make sure you have configured the env-variables

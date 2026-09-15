@@ -6,8 +6,9 @@ const chunkLogger = logger.child({ module: "SendChunkedJson" });
 // Send keep-alive every 5 seconds.
 const KEEP_ALIVE_INTERVAL = 5 * 1000;
 
-// If no push happened after 30 seconds, close connection.
-const PUSH_TIMEOUT = 30 * 1000;
+// If no push happened after timeout, close connection.
+// FlareSolverr can take 30-60 seconds per request, so use longer timeout when configured.
+const PUSH_TIMEOUT = process.env.FLARESOLVERR_URL ? 120 * 1000 : 30 * 1000;
 
 /**
  * Stream array of objects as JSON to client.
