@@ -86,7 +86,9 @@ heroku redis:maxmemory <name-of-redis-instance> --policy allkeys-lfu
 
 #### Pre-built docker-image
 
-You will get the newest image by pulling `screeny05/letterboxd-list-radarr:latest`. The image is available for both x86-64 and arm64.
+Pull `ghcr.io/screeny05/letterboxd-list-radarr:latest` for x86-64 or arm64. GitHub Actions publishes on pushes to `main` and `master`, with `latest` following the default branch and `sha-<full commit SHA>` tags for each build.
+
+The Docker Hub image is also available as `screeny05/letterboxd-list-radarr:latest`.
 
 Here is an example of how to use the image with docker-compose:
 
