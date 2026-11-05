@@ -1,6 +1,6 @@
-import readPackageUp from "read-pkg-up";
+import { readPackageUpSync } from "read-package-up";
 
-const meta = readPackageUp.sync()?.packageJson;
+const meta = readPackageUpSync()?.packageJson;
 
 export const userAgentString =
     process.env.USER_AGENT ??

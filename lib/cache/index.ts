@@ -1,12 +1,13 @@
-import redis from "redis";
+import { createClient } from "redis";
 import { logger } from "../logger";
 
 const log = logger.child({ module: "Cache" });
 
-export const cache = redis.createClient({
+export const cache = createClient({
     url: process.env.REDIS_URL,
+    disableOfflineQueue: true,
     ...(process.env.REDIS_URL?.startsWith("rediss://")
-        ? { tls: { rejectUnauthorized: false } }
+        ? { socket: { tls: true, rejectUnauthorized: false } }
         : {}),
 });
 
@@ -17,6 +18,8 @@ cache.on("error", (err) => {
 cache.on("ready", () => {
     log.info("Redis ready");
 });
+
+cache.connect().catch((err) => log.error("Redis connection failed", err));
 
 let isDegraded = false;
 
@@ -34,79 +37,47 @@ const onCommandSucceeded = (): void => {
     isDegraded = false;
 };
 
-export const has = (key: string): Promise<boolean> =>
-    new Promise((resolve) => {
-        if (!key || !cache.connected) {
-            return resolve(false);
-        }
-        cache.exists(key, (err, data) => {
-            if (err) {
-                onCommandFailed("exists", key, err);
-                return resolve(false);
-            }
-            onCommandSucceeded();
-            resolve(data === 1);
-        });
-    });
+export const has = async (key: string): Promise<boolean> => {
+    if (!key || !cache.isReady) return false;
+    try {
+        const data = await cache.exists(key);
+        onCommandSucceeded();
+        return data === 1;
+    } catch (err) {
+        onCommandFailed("exists", key, err);
+        return false;
+    }
+};
 
-export const get = <T = any>(key: string): Promise<T | undefined> =>
-    new Promise((resolve) => {
-        if (!key || !cache.connected) {
-            // Treat an unavailable cache as a miss so we fall back to
-            // fetching live instead of failing the request.
-            return resolve(undefined);
-        }
-        cache.get(key, (err, data) => {
-            if (err) {
-                onCommandFailed("get", key, err);
-                return resolve(undefined);
-            }
-            onCommandSucceeded();
-            try {
-                resolve(JSON.parse(data));
-            } catch (e) {
-                onCommandFailed("get", key, e);
-                resolve(undefined);
-            }
-        });
-    });
+export const get = async <T = any>(key: string): Promise<T | undefined> => {
+    if (!key || !cache.isReady) return undefined;
+    try {
+        const data = await cache.get(key);
+        const value = data === null ? undefined : JSON.parse(data);
+        onCommandSucceeded();
+        return value;
+    } catch (err) {
+        onCommandFailed("get", key, err);
+        return undefined;
+    }
+};
 
-export const set = (key: string, value: any, ttl?: number): Promise<void> =>
-    new Promise((resolve) => {
-        if (!cache.connected) {
-            return resolve();
-        }
+export const set = async (key: string, value: any, ttl?: number): Promise<void> => {
+    if (!cache.isReady) return;
+    try {
+        await cache.set(key, JSON.stringify(value), ttl ? { expiration: { type: "EX", value: ttl } } : undefined);
+        onCommandSucceeded();
+    } catch (err) {
+        onCommandFailed("set", key, err);
+    }
+};
 
-        const cb = (err: any) => {
-            if (err) {
-                onCommandFailed("set", key, err);
-            } else {
-                onCommandSucceeded();
-            }
-            resolve();
-        };
-
-        value = JSON.stringify(value);
-
-        if (ttl) {
-            cache.set(key, value, "EX", ttl, cb);
-        } else {
-            cache.set(key, value, cb);
-        }
-    });
-
-export const del = (key: string): Promise<void> =>
-    new Promise((resolve) => {
-        if (!cache.connected) {
-            return resolve();
-        }
-
-        cache.del(key, (err) => {
-            if (err) {
-                onCommandFailed("del", key, err);
-            } else {
-                onCommandSucceeded();
-            }
-            resolve();
-        });
-    });
+export const del = async (key: string): Promise<void> => {
+    if (!cache.isReady) return;
+    try {
+        await cache.del(key);
+        onCommandSucceeded();
+    } catch (err) {
+        onCommandFailed("del", key, err);
+    }
+};

@@ -1,22 +1,15 @@
 import pLimit from "p-limit";
-import { getKanpai, getFirstMatch, LETTERBOXD_ORIGIN } from "./util";
+import get from "../axios";
+import { LetterboxdMovieDetails, parseMovieDetails } from "./parse";
+import { LETTERBOXD_ORIGIN } from "./util";
 import * as cache from "../cache/index";
 import { logger } from "../logger";
+
+export type { LetterboxdMovieDetails } from "./parse";
 
 const moviesLogger = logger.child({ module: "MoviesDetails" });
 
 const MOVIE_CACHE_TIMEOUT = 30 * 24 * 60 * 60;
-
-const IMDB_REGEX = /imdb\.com\/title\/(.*?)(\/|$)/i;
-const TMDB_REGEX = /themoviedb\.org\/movie\/(.*?)(\/|$)/;
-
-export interface LetterboxdMovieDetails {
-    slug: string;
-    name: string;
-    published: string;
-    imdb: string;
-    tmdb?: string;
-}
 
 export const getMoviesDetailCached = async (
     slugs: string[],
@@ -51,27 +44,12 @@ export const getMoviesDetailCached = async (
     return movies.filter((movie): movie is LetterboxdMovieDetails => !!movie);
 };
 
-export const getMovieDetail = async (slug: string) => {
-    const details = await getKanpai<LetterboxdMovieDetails>(
-        `${LETTERBOXD_ORIGIN}${slug}`,
-        {
-            name: ".headline-1",
-            published: "a[href^='/films/year']",
-            imdb: [
-                '[data-track-action="imdb" i]',
-                "[href]",
-                getFirstMatch(IMDB_REGEX),
-            ],
-            tmdb: [
-                '[data-track-action="tmdb" i]',
-                "[href]",
-                getFirstMatch(TMDB_REGEX),
-            ],
-        }
-    );
-    details.slug = slug;
-    return details;
-};
+export const getMovieDetail = async (
+    slug: string
+): Promise<LetterboxdMovieDetails> => ({
+    ...parseMovieDetails(await get(`${LETTERBOXD_ORIGIN}${slug}`)),
+    slug,
+});
 
 export const getCachedMovieDetail = async (slug: string) => {
     const cached = await cache.get<LetterboxdMovieDetails>(slug);

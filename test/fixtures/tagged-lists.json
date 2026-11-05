@@ -1,0 +1,15 @@
+{
+  "next": "2",
+  "lists": [
+    {
+      "slug": "/alice/list/horror-picks/",
+      "title": "Horror Picks",
+      "moviesCount": "12"
+    },
+    {
+      "slug": "/bob/list/slashers/",
+      "title": "Slashers",
+      "moviesCount": "1"
+    }
+  ]
+}

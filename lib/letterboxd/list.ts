@@ -1,23 +1,12 @@
-import {
-    getKanpai,
-    getFirstMatch,
-    LETTERBOXD_ORIGIN,
-    LETTERBOXD_NEXT_PAGE_REGEX,
-} from "./util";
+import get from "../axios";
+import { LetterboxdListPage, LetterboxdPoster, parseListPage } from "./parse";
+import { LETTERBOXD_ORIGIN } from "./util";
 import * as cache from "../cache/index";
+
+export type { LetterboxdPoster } from "./parse";
 
 // Cache Lists for 30min
 const LIST_CACHE_TIMEOUT = 30 * 60;
-
-export interface LetterboxdPoster {
-    slug: string;
-    title: string;
-}
-
-interface LetterboxdListPage {
-    next: string;
-    posters: LetterboxdPoster[];
-}
 
 export const getList = async (
     listSlug: string
@@ -53,21 +42,7 @@ export const getListPaginated = async (
     listSlug: string,
     page: number
 ): Promise<LetterboxdListPage> => {
-    return await getKanpai<LetterboxdListPage>(
-        `${LETTERBOXD_ORIGIN}${listSlug}page/${page}/`,
-        {
-            next: [
-                ".paginate-nextprev .next",
-                "[href]",
-                getFirstMatch(LETTERBOXD_NEXT_PAGE_REGEX),
-            ],
-            posters: [
-                '.posteritem > .react-component, [data-component-class*="LazyPoster"], .poster-list [data-poster-url*="film"], .poster-grid [data-poster-url*="film"]',
-                {
-                    slug: ["$", "[data-target-link]"],
-                    title: ["$", "[data-item-name]"],
-                },
-            ],
-        }
+    return parseListPage(
+        await get(`${LETTERBOXD_ORIGIN}${listSlug}page/${page}/`)
     );
 };

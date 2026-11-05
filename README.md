@@ -112,7 +112,7 @@ For optimal configuration of redis, please check out the [redis.conf](redis.conf
 ```
 git clone git@github.com:screeny05/letterboxd-list-radarr.git
 cd letterboxd-list-radarr
-npm install
+pnpm install
 docker-compose up -d
 ```
 
@@ -133,5 +133,5 @@ Following environment-params are supported:
 
 1. Clone this repo
 2. Make sure you have configured the env-variables
-3. `npm install`
-4. `npm run watch`
+3. `pnpm install`
+4. `pnpm watch`

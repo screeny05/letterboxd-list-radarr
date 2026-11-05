@@ -1,0 +1,1369 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html id="html" lang="en" class="context-client-unknown no-mobile no-js page-layout-grid">
+<head>
+	<meta charset="UTF-8">
+	
+	
+			
+		
+	<meta name="viewport" content="width=1024">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Films produced by A24">
+	
+	
+	<meta property="og:url" content="https://letterboxd.com/studio/a24/">
+	<meta property="og:title" content="Films produced by A24">
+	<meta property="og:description" content="Films produced by A24">
+	<meta property="og:image" content="https://s.ltrbxd.com/static/img/default-share-7md9L34t.png">
+	<meta property="fb:app_id" content="173683136069040">
+	
+	<meta name="application-name" content="Letterboxd">
+	<meta name="theme-color" content="#14181C">
+	<meta name="msapplication-TileColor" content="#445566">
+	<meta name="apple-itunes-app" content="app-id=1054271011, affiliate-data=11l5KW, app-argument=https://letterboxd.com/studio/a24/">
+	<meta name="mobile-web-app-capable" content="yes">
+	
+
+	<title>&lrm;Films produced by A24 &bull; Letterboxd</title>
+	<script>
+		
+		((r, n) => {
+			r.dataset.useragent = n.userAgent
+			r.dataset.platform = n.platform
+		})(document.documentElement, navigator)
+
+		var isMobile = false,
+			isMobileOptimised = true,
+			renderMobile = false,
+			useStaticFonts = false,
+			disableFrameProtection = false,
+			baseURL = '',
+			staticAssetBaseURL = 'https://s.ltrbxd.com/'.slice(0, -1),
+			successMessages = [],
+			errorMessages = [],
+			stickyMessages = [],
+			globals = {
+			autoAddFilm: false
+				, spinners: {
+					ajax_242d35: 'https://s.ltrbxd.com/static/img/spinner-dark-2x-BA9SNVrD.gif',
+					spinner_12_2C3641: 'https://s.ltrbxd.com/static/img/spinner-dark-2x-BA9SNVrD.gif',
+					spinner_14_20272f: 'https://s.ltrbxd.com/static/img/spinner-dark-2x-BA9SNVrD.gif',
+					spinner_16_161B21: 'https://s.ltrbxd.com/static/img/spinner-dark-2x-BA9SNVrD.gif'
+				}
+			},
+			supermodelCSRF = "",
+			configuration = {
+				cloudflare: {
+					turnstile: {
+						managedSiteKey: '0x4AAAAAACeEHQVg5SDQxB2s',
+						invisibleSiteKey: '0x4AAAAAACoeo5dsZfnzc50M',
+					}
+				},
+			},
+			geolocation = {
+				country: ""
+			},
+			privacyPolicyDetails = function(privacyPolicy) {
+				
+				const policies = {
+				'Anyone': { 'label': 'Anyone', 'description': 'Anyone (public)', 'tooltip': 'Reactions visible to anyone' },
+				
+				'Friends': { 'label': 'Friends', 'description': 'Close Friends (selected by you)', 'tooltip': 'Reactions visible to owner’s Close Friends' },
+				
+				'You': { 'label': 'Private', 'description': 'You (private)', 'tooltip': 'Reactions only visible to you' },
+				
+				'Draft': { 'label': 'Draft', 'description': 'Draft entry', 'tooltip': 'Draft entry' },
+				}
+				return policies[privacyPolicy]
+			},
+			sharePolicyDetails = function(sharePolicy) {
+				
+				const policies = {
+				'Anyone': { 'label': 'Anyone', 'description': 'Anyone with share link', 'tooltip': 'Visible to anyone (with link)' },
+				
+				'Friends': { 'label': 'Friends', 'description': 'Friends (people you follow) with share link', 'tooltip': 'Visible to the member’s friends (with link)' },
+				
+				'You': { 'label': 'Private', 'description': 'You (private list)', 'tooltip': 'Only visible to you' },
+				}
+				return policies[sharePolicy]
+			},
+			person = {
+				username: ""
+				, loggedIn: false
+				
+				, showAds: true
+				, role: "guest"
+				, hasExtendedServiceFilters: false
+				, canBulkAddToLists: false
+				, canFilterOwned: false
+				, canPublishStories: false
+				, canHaveHqDashboard: false
+				, hasMemberStatistics: false
+				, blockedMembers: []
+				, showAdultContent: false
+				, validated: null
+				, trusted: false
+				, hasBlocked : function(member) { for (var i = 0; i !== person.blockedMembers.length; i++) {if (person.blockedMembers[i] === member) return true;} return false; }
+				, getCustomPoster : function(uid) { return null; }
+				, getCustomBackdrop : function(uid) { return null; }
+			},
+			disableAds = false,
+			analytic_params = {};
+		
+		
+supermodelCSRF = '4da15a8b05b3cf52641b'; geolocation.country = 'US'; analytic_params['user_type'] = 'Visitor'; analytic_params['member_type'] = null;
+
+	</script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	window.gtag = window.gtag || function () {
+		dataLayer.push(arguments);
+	};
+	function ga() {}
+</script>
+
+	<script>
+		
+		window.analyticsConsentRequired = false;
+
+		
+		if (!analytic_params['template']) {
+			analytic_params['template'] = '/object/filmcontributor';
+		}
+		
+		
+	</script>
+	
+	<script src="https://s.ltrbxd.com/static/js/es/js/workers/google-tag-privacy-2vQVvf-j.js?k=0183a1cc00"></script>
+
+
+	
+<script>
+function ASAP(callback) {
+	if (window.__ASAPPED) {
+		callback()
+		return
+	}
+	if (!window.__ASAP) {
+		window.__ASAP = []
+	}
+	window.__ASAP.push(callback)
+}
+</script>
+
+	<script>
+		
+
+		
+			
+		
+
+		
+
+		
+		
+			
+			  function setUseMobileSiteCookie(useMobile) {
+					const value = useMobile ? 'yes' : 'no'
+					const date = new Date()
+					const maxAge = 365 * 24 * 60 * 60
+					date.setTime(date.getTime() + maxAge * 1000)
+					const expires = '; expires=' + date.toUTCString()
+					const cookieValuePair = 'useMobileSite=' + value
+					document.cookie = cookieValuePair + expires + '; path=/; maxAge=' + maxAge
+
+					if (document.cookie.includes(cookieValuePair)) {
+						window.location.reload(true)
+					} else {
+						console.error('Failed to set useMobileSite cookie.')
+					}
+				}
+
+				/*
+				 * If ?fromApp=true, it's possible for user is already in the correct mode, so only try
+				 * reloading if that's the case. In fact, trying to reload the page regardless causes an 
+				 * infinite loop as the ?fromApp=true parameter is always present.
+				 */
+				const isMobileWidth = screen.width < 768
+				if (isMobileWidth && !document.cookie.includes('useMobileSite=yes')) {
+					setUseMobileSiteCookie(true)
+				} else if (!isMobileWidth && !document.cookie.includes('useMobileSite=no')) {
+					setUseMobileSiteCookie(false)
+				}
+			
+		
+	</script>
+	
+
+	
+			
+		
+	
+
+
+
+
+
+	
+	
+	<script>
+		window.ramp = window.ramp || {};
+		window.ramp.que = window.ramp.que || [];
+		window.ramp.passiveMode = false; 
+		window.ramp.forcePath = '';
+		window.ramp.custom_tags = [
+			'', 
+			'', 
+			'', 
+			'cast-crew', 
+			'',  // 'ucc:' 'pcc:'
+			''
+		];
+	</script>
+	<script src="//cdn.intergient.com/1024338/72804/ramp_config.js"></script>
+	<script>
+		(function() {
+			const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+			window.isAndroid = new RegExp("android", "i").test(userAgent);
+			window.isIOS = new RegExp("iPad|iPhone|iPod", "i").test(userAgent) && !window.MSStream;
+			window.adsLocation = 'US';
+		})();
+	</script>
+
+
+
+	<link rel="manifest" href="/manifest.json">
+	<link rel="author" type="text/plain" href="/humans.txt">
+	<link rel="mask-icon" href="https://s.ltrbxd.com/static/img/letterboxd-decal-l-16px-DorUFlWn.svg" color="#445566">
+	<link rel="shortcut icon" sizes="196x196" href="https://s.ltrbxd.com/static/img/touch-icon-192x192-lO1g3Ot4.png">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="search" type="application/opensearchdescription+xml" title="Letterboxd" href="/static/opensearch.xml">
+	
+	
+	
+
+	
+  <script type="module" crossorigin src="https://s.ltrbxd.com/static/js/es/js/app-detection-D-uiD2eV.js"></script>
+  <link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/P2Xu9kJm.js">
+  <link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C7etpEb4.js">
+  <link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/tGDoDJxR.js">
+  <link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DrthbYAU.js">
+
+	
+	
+			
+		<script type="module" crossorigin src="https://s.ltrbxd.com/static/js/es/main-CxejZr2R.js"></script>
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C0FnF6B9.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/P2Xu9kJm.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/xPr8QFGw.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Cs9zNb6V.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BqdBX9tk.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/4xvnKv7I.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BNu43IiG.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C6ZBybhW.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CeA54qlt.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CzkieaSS.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CuyTkb7v.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Ndx4kYRk.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CFkCX2uf.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C7etpEb4.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CIRhoabB.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CoYKFIJK.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BW7cab8x.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D_GycHFN.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CKZsPX3Z.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/WlWVCv9e.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/COvrg1TC.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C_EYltTh.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/AYWHXYXO.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D0LO6OH5.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Djh7ueVS.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DpZ9T2AU.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CJVqMf5S.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BfqEcJ93.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/uBIymjUX.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DNubDeBx.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D5t9WmNj.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BbfpZ9Tg.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CYCe0qe0.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/B0XyPgr1.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/fyOfcy1p.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DjLcBeO_.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/K_XC6Vcq.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BYoDIPbw.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DeQ5MWFg.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DctmSSgi.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D300AOtD.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BDrlv4d3.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DEOEo2hH.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DRZ95kRd.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BMbEYtE8.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/xIsJHI0F.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/kf8POdZV.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Dcqgdykc.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BIs8CsuC.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BJeifvdA.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CnfE9O3Z.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C2Xy28pf.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/tGDoDJxR.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DeLhKxRR.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/B9lnrEdZ.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C_cBfWLE.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/lz_ZYEov.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Bug6L_Di.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CTMM6o0Y.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/COCZC6YS.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CUQN1H77.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/5J-BPsyu.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/cyi7966G.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CW3dyLug.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Bu5jamiZ.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BH8COBur.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DV1gWcVw.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BTwAcsGB.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BTifQOcG.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D0WjQjsG.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Bs-Fzx3_.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/B1gQlssp.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BQRTU3o-.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/B8efvh4E.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Bz4zLhs5.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DFCnGCLd.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CalNzuW1.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Ci7fLlvm.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DXLjWaK4.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CjpxxNqD.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/ChvE4cIY.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DKMVyxr-.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BNjsXRsK.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/sJinfCak.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BkF5pxuk.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/B5YalI89.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/TXj1QCzj.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BQ79WqRU.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/pI-tWg5H.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/B1PPhsbk.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D6Jwj2iI.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BwtQ-S-K.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D-3J9xsx.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/YZUHGh8n.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BUZJPu17.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BJxT3SYJ.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DpZpGzMK.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/B0shAOcT.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BD7NO74j.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CgqbcRut.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D7UV9Vql.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/b16LxuPh.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/QAKonCQS.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Dq10TNrr.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D2UWOGCO.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/D93iqHB_.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/B145EpI_.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BkCui6zZ.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DJ8NOANO.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Bll0X-zH.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/O5wDmpln.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/L9u7ewRE.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/UrbHIeF3.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CrMFPN7Z.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Bu8dTp9w.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CjwPJnKT.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CLoNcgkC.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/NMQnd2WV.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/dhX48UsL.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DeZmbVIq.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C2coUfeL.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C2pdfyeY.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CK0GMxIX.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/Cp6KYC0Z.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DBc5G9BU.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/CLVlqtem.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/YxFLGc8q.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BZccmBFr.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/DaOT9Mma.js">
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/modal-manager-Dh9ntnoQ.css">
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/spinner-CE7dyJD7.css">
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/letterboxd-spinner-Ba96yDU9.css">
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/production-masthead-CQCstMYJ.css">
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/dialog-controls-BqjEFSV6.css">
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/private-note-modal-DnVbJix-.css">
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/main-COyqin26.css">
+	
+
+			
+			
+			
+			
+			
+			
+			
+
+			
+					
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/desktop-BiM_xISF.css">
+	
+				
+		
+
+	
+		
+			
+		<link rel="stylesheet" crossorigin href="https://s.ltrbxd.com/static/css/contributor-CXSgjqF1.css">
+	
+		
+	
+		
+	
+
+	
+	
+
+	
+
+
+
+
+
+	<script>
+	ASAP(function() {
+		if ( $.cookie("letterboxd.admin.signed.in") === person.username ) {
+			successMessages.push("You are signed in as " + person.username);
+			$(function(){$("#header, #content, body").css("background","#543");});
+		}
+	})
+	</script>
+	
+</head>
+
+<body class="screen-contributor screen-contributor-studio" data-type="studio" data-tmdb-type="company" data-tmdb-id="41077">
+	
+
+
+
+
+
+
+
+
+
+
+<template id="share-policy-icon-anyone"><span class="policy-icon -share -anyone -circle inline-symbol" data-policy-type="share" data-policy-code="anyone"><span class="frame tooltip" data-original-title="Visible to anyone (with link)" data-js-trigger="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="12" height="12" viewBox="0 0 12 12"><path d="M3.38 4.06a2.5 2.5 0 0 1 3.54 0l.99 1.04-1.06 1.06h-.02l-1-1.06a.96.96 0 0 0-1.36 0l-.43.44q-.15.12-.29.28L1.82 7.75a1 1 0 0 0-.28.7q0 .4.29.68l.4.4c.38.37.98.37 1.36.01l.83-.85q.61.59 1.39.82l-1.13 1.14a2.5 2.5 0 0 1-3.54 0l-.4-.4a2.5 2.5 0 0 1 0-3.54ZM9.1.61c.67 0 1.3.27 1.77.74l.4.4a2.5 2.5 0 0 1 0 3.54L8.63 7.94a2.5 2.5 0 0 1-3.54 0l-1.03-1 .41-.41.13-.15.15-.14.4-.4L6.18 6.9c.35.34.89.37 1.27.08l.09-.08 2.65-2.66a1 1 0 0 0 .27-.56v-.13q0-.4-.28-.69l-.4-.4a1 1 0 0 0-1.36 0l-.84.84q-.62-.59-1.4-.82l1.15-1.13A2.5 2.5 0 0 1 9.09.6"/></svg> </span> <span class="label _sr-only">Visible to anyone (with link)</span> </span></template> <template id="share-policy-icon-friends"><span class="policy-icon -share -friends -circle inline-symbol" data-policy-type="share" data-policy-code="friends"><span class="frame tooltip" data-original-title="Visible to the member’s friends (with link)" data-js-trigger="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="14" height="12" viewBox="0 0 14 12"><path fill-rule="evenodd" d="M10.33 8.23h-.26c1.16 0 1.88.2 2.62.5q.65.25 1 .59.45.4.44.83v1.35h-3.15V9.8c0-.51-.19-1.06-.65-1.58m-.26-5.53c.58 0 1.11.21 1.5.61.34.35.56.85.56 1.49a3.7 3.7 0 0 1-.54 2c-.34.48-.84.8-1.52.8-.65 0-1.15-.32-1.5-.84a3.7 3.7 0 0 1-.57-2 2 2 0 0 1 .56-1.46c.39-.4.92-.6 1.5-.6M4.98 7.41A7 7 0 0 1 9.3 8.77q.54.52.53 1.04v1.69H.13V9.81q0-.52.53-1.04.45-.41 1.26-.74c.92-.37 1.6-.62 3.06-.62m0-6.91c.72 0 1.4.27 1.88.76.42.44.7 1.07.7 1.86 0 .87-.21 1.82-.68 2.5a2.23 2.23 0 0 1-3.78-.04 4.6 4.6 0 0 1-.7-2.5c0-.79.27-1.4.7-1.83A2.6 2.6 0 0 1 4.98.5"/></svg> </span> <span class="label _sr-only">Visible to the member’s friends (with link)</span> </span></template> <template id="share-policy-icon-you"><span class="policy-icon -share -you -circle inline-symbol" data-policy-type="share" data-policy-code="you"><span class="frame tooltip" data-original-title="Only visible to you" data-js-trigger="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="10" height="12" viewBox="0 0 10 12"><path fill-rule="evenodd" d="M5 0a3.5 3.5 0 0 1 3.5 3.5V4c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5h-7A1.5 1.5 0 0 1 0 10.5v-5C0 4.67.67 4 1.5 4v-.5A3.5 3.5 0 0 1 5 0m0 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2m0-5.5a2 2 0 0 0-2 2V4h4v-.5a2 2 0 0 0-1.85-2z"/></svg> </span> <span class="label _sr-only">Only visible to you</span> </span></template> <template id="icon-dismiss-12"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="12" height="12" viewBox="0 0 12 12"><path stroke="currentColor" stroke-linecap="round" d="m1 1 10 10M1 11 11 1" vector-effect="non-scaling-stroke"></svg></template> <template id="icon-add-16"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="16" height="16" viewBox="0 0 16 16"> <path stroke="currentColor" stroke-linecap="round" stroke-width="2" vector-effect="non-scaling-stroke" d="M8 3v10M3 8h10"/> </svg></template> <template id="icon-search-16"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="16" height="16" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6.81" cy="6.81" r="6.06"/><path stroke-linecap="round" d="m15.25 15.25-3.69-3.69"/></g></svg></template> <div hidden> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="16" height="16" viewBox="0 0 16 16" id="icon-pencil-16"><path fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.681 1.823c.431-.43 1.13-.43 1.56 0l.936.936c.43.43.43 1.129 0 1.56L5.5 13a.66.66 0 0 1-.314.176l-3.414 1.318a.22.22 0 0 1-.266-.266l1.318-3.414A.66.66 0 0 1 3 10.5zM10.25 3.25l2.5 2.5" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="12" height="16" viewBox="0 0 12 16" id="icon-trash-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10.25 7-.884 6.632a1 1 0 0 1-.992.868H3.626a1 1 0 0 1-.992-.868L1.75 7M.75 4.5h10.5M3.5 4.5V2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v2.5" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="8" height="14" viewBox="0 0 8 14" id="icon-grabber-16"><path fill="currentColor" fill-rule="evenodd" d="M1.5 3.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="10" height="12" viewBox="0 0 10 12" id="icon-arrow-up-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 11V1M1 5l4-4 4 4" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="12" height="10" viewBox="0 0 12 10" id="icon-arrow-right-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 5h10M7 1l4 4-4 4" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="10" height="12" viewBox="0 0 10 12" id="icon-arrow-down-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 1v10M1 7l4 4 4-4" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="12" height="10" viewBox="0 0 12 10" id="icon-arrow-left-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H1M5 1 1 5l4 4" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="10" height="14" viewBox="0 0 10 14" id="icon-move-to-top-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3.75V13M1 7.75l4-4 4 4M1 1.5h8" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="14" height="10" viewBox="0 0 14 10" id="icon-move-to-end-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.25 5H1M6.25 1l4 4-4 4M12.5 1v8" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="10" height="14" viewBox="0 0 10 14" id="icon-move-to-bottom-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 10.25V1M1 6.25l4 4 4-4M1 12.5h8" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="14" height="10" viewBox="0 0 14 10" id="icon-move-to-start-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 5H13M7.75 1l-4 4 4 4M1.5 1v8" vector-effect="non-scaling-stroke"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="16" height="16" viewBox="0 0 16 16" id="icon-insert-row-16"><g fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" vector-effect="non-scaling-stroke" d="M15.25 2.25h-6a.5.5 0 0 1-.5-.5v-1m0 14.5v-1a.5.5 0 0 1 .5-.5h6m-14.5-8h5c.276 0 .5.183.5.41v3.68c0 .227-.224.41-.5.41h-5M9 8h4.75"/><path fill="currentColor" fill-rule="evenodd" d="M12 5.845v4.31a.5.5 0 0 0 .827.378l2.487-2.155a.5.5 0 0 0 0-.756l-2.487-2.155a.5.5 0 0 0-.827.378"/></g></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="12" height="4" viewBox="0 0 12 4" id="icon-kebab-horizontal-16"><g fill="currentColor" fill-rule="evenodd" transform="translate(0 .5)"><circle cx="10.75" cy="1.5" r="1.25"/><circle cx="6" cy="1.5" r="1.25"/><circle cx="1.25" cy="1.5" r="1.25"/></g></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="13" height="15" viewBox="0 0 13 15" aria-label="½" id="icon-rating-1-15"> <title>½</title><path transform="translate(0.0, 0)" d="M.25 14.25h1.5L12.25.75h-1.5zm1.5-6.75H3.5V.75H2.04L.25 1.95v1.48l1.5-.93zm5.91 6.75H13v-1.5h-2.5l1.11-.87c.8-.77 1.22-1.5 1.22-2.4 0-1.21-.72-2.07-2.34-2.07-1.6 0-2.6.87-2.68 2.49h1.62c.1-.82.44-1.16.99-1.16.53 0 .8.3.8.82 0 .59-.44 1.17-1.13 1.88L7.66 14z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="14" height="15" viewBox="0 0 14 15" aria-label="★" id="icon-rating-2-15"> <title>★</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="29" height="15" viewBox="0 0 29 15" aria-label="★½" id="icon-rating-3-15"> <title>★½</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(16.0, 0)" d="M.25 14.25h1.5L12.25.75h-1.5zm1.5-6.75H3.5V.75H2.04L.25 1.95v1.48l1.5-.93zm5.91 6.75H13v-1.5h-2.5l1.11-.87c.8-.77 1.22-1.5 1.22-2.4 0-1.21-.72-2.07-2.34-2.07-1.6 0-2.6.87-2.68 2.49h1.62c.1-.82.44-1.16.99-1.16.53 0 .8.3.8.82 0 .59-.44 1.17-1.13 1.88L7.66 14z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="30" height="15" viewBox="0 0 30 15" aria-label="★★" id="icon-rating-4-15"> <title>★★</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(16, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="45" height="15" viewBox="0 0 45 15" aria-label="★★½" id="icon-rating-5-15"> <title>★★½</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(16, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(32.0, 0)" d="M.25 14.25h1.5L12.25.75h-1.5zm1.5-6.75H3.5V.75H2.04L.25 1.95v1.48l1.5-.93zm5.91 6.75H13v-1.5h-2.5l1.11-.87c.8-.77 1.22-1.5 1.22-2.4 0-1.21-.72-2.07-2.34-2.07-1.6 0-2.6.87-2.68 2.49h1.62c.1-.82.44-1.16.99-1.16.53 0 .8.3.8.82 0 .59-.44 1.17-1.13 1.88L7.66 14z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="46" height="15" viewBox="0 0 46 15" aria-label="★★★" id="icon-rating-6-15"> <title>★★★</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(16, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(32, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="61" height="15" viewBox="0 0 61 15" aria-label="★★★½" id="icon-rating-7-15"> <title>★★★½</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(16, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(32, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(48.0, 0)" d="M.25 14.25h1.5L12.25.75h-1.5zm1.5-6.75H3.5V.75H2.04L.25 1.95v1.48l1.5-.93zm5.91 6.75H13v-1.5h-2.5l1.11-.87c.8-.77 1.22-1.5 1.22-2.4 0-1.21-.72-2.07-2.34-2.07-1.6 0-2.6.87-2.68 2.49h1.62c.1-.82.44-1.16.99-1.16.53 0 .8.3.8.82 0 .59-.44 1.17-1.13 1.88L7.66 14z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="62" height="15" viewBox="0 0 62 15" aria-label="★★★★" id="icon-rating-8-15"> <title>★★★★</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(16, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(32, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(48, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="77" height="15" viewBox="0 0 77 15" aria-label="★★★★½" id="icon-rating-9-15"> <title>★★★★½</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(16, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(32, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(48, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(64.0, 0)" d="M.25 14.25h1.5L12.25.75h-1.5zm1.5-6.75H3.5V.75H2.04L.25 1.95v1.48l1.5-.93zm5.91 6.75H13v-1.5h-2.5l1.11-.87c.8-.77 1.22-1.5 1.22-2.4 0-1.21-.72-2.07-2.34-2.07-1.6 0-2.6.87-2.68 2.49h1.62c.1-.82.44-1.16.99-1.16.53 0 .8.3.8.82 0 .59-.44 1.17-1.13 1.88L7.66 14z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="graphics-symbol" class="glyph -rating" width="78" height="15" viewBox="0 0 78 15" aria-label="★★★★★" id="icon-rating-10-15"> <title>★★★★★</title><path transform="translate(0, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(16, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(32, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(48, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/><path transform="translate(64, 0)" fill-rule="evenodd" d="M7.89 1.2c-.34-.95-1.47-.92-1.78 0L4.97 5h-3.9C-.05 5-.39 6.15.53 6.85L3.63 9l-1.18 4.11c-.35 1.13.52 1.8 1.44 1.1L7 11.83l3.11 2.38c.92.7 1.79.03 1.44-1.1L10.37 9l3.1-2.15c.92-.7.58-1.85-.54-1.85H9.08z"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="10" height="6" viewBox="0 0 10 6" id="icon-chevron-down-12"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--chevron-stroke-width, 1.5)" vector-effect="non-scaling-stroke" d="M1.25 1 5 5l3.75-4"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="12" height="8" viewBox="0 0 12 8" id="icon-chevron-down-16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--chevron-stroke-width, 1.5)" vector-effect="non-scaling-stroke" d="m1 1.5 4.65 4.65a.5.5 0 0 0 .704.002L11 1.577"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="9" height="18" viewBox="0 0 9 18" id="icon-chevron-right-24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" vector-effect="non-scaling-stroke" d="m1 1 7 8-7 8"/></svg> <svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="glyph" width="8" height="8" viewBox="0 0 8 8" id="icon-x-12"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m7.25.75-6.5 6.5M.75.75l6.5 6.5" vector-effect="non-scaling-stroke"/></g></svg> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var mainMenu = [];
+
+	mainMenu.push({
+		"id": 1,
+		"url": "/sign-in/", 
+		"name": "Sign in",
+		"cssClassCode": "sign-in-menu",
+		"hideWhenSignedIn": true,
+		"hideWhenNotSignedIn": false,
+		"showInMainNavForMobile": true,
+		"tooltip": "",
+		"selected": false
+	});
+
+	mainMenu.push({
+		"id": 2,
+		"url": "/create-account/", 
+		"name": "Create account",
+		"cssClassCode": "create-account-menu",
+		"hideWhenSignedIn": true,
+		"hideWhenNotSignedIn": false,
+		"showInMainNavForMobile": false,
+		"tooltip": "",
+		"selected": false
+	});
+
+	mainMenu.push({
+		"id": 3,
+		"url": "/", 
+		"name": "Home",
+		"cssClassCode": "person-home",
+		"hideWhenSignedIn": true,
+		"hideWhenNotSignedIn": true,
+		"showInMainNavForMobile": false,
+		"tooltip": "",
+		"selected": false
+	});
+
+	mainMenu.push({
+		"id": 4,
+		"url": "/activity/", 
+		"name": "Activity",
+		"cssClassCode": "main-nav-activity",
+		"hideWhenSignedIn": false,
+		"hideWhenNotSignedIn": true,
+		"showInMainNavForMobile": false,
+		"tooltip": "Activity",
+		"selected": false
+	});
+
+	mainMenu.push({
+		"id": 5,
+		"url": "/films/", 
+		"name": "Films",
+		"cssClassCode": "films-page main-nav-films",
+		"hideWhenSignedIn": false,
+		"hideWhenNotSignedIn": false,
+		"showInMainNavForMobile": false,
+		"tooltip": "",
+		"selected": false
+	});
+
+	mainMenu.push({
+		"id": 6,
+		"url": "/lists/", 
+		"name": "Lists",
+		"cssClassCode": "lists-page main-nav-lists",
+		"hideWhenSignedIn": false,
+		"hideWhenNotSignedIn": false,
+		"showInMainNavForMobile": false,
+		"tooltip": "",
+		"selected": false
+	});
+
+	mainMenu.push({
+		"id": 7,
+		"url": "/members/", 
+		"name": "Members",
+		"cssClassCode": "main-nav-people",
+		"hideWhenSignedIn": false,
+		"hideWhenNotSignedIn": false,
+		"showInMainNavForMobile": false,
+		"tooltip": "",
+		"selected": false
+	});
+
+	mainMenu.push({
+		"id": 8,
+		"url": "/journal/", 
+		"name": "Journal",
+		"cssClassCode": "main-nav-journal",
+		"hideWhenSignedIn": false,
+		"hideWhenNotSignedIn": false,
+		"showInMainNavForMobile": false,
+		"tooltip": "",
+		"selected": false
+	});
+
+	mainMenu.push({
+		"id": 9,
+		"url": "/search/", 
+		"name": "Search results",
+		"cssClassCode": "",
+		"hideWhenSignedIn": true,
+		"hideWhenNotSignedIn": true,
+		"showInMainNavForMobile": false,
+		"tooltip": "",
+		"selected": false
+	});
+
+</script>
+
+<header class="site-header js-hide-in-app" id="header" data-allow-user-to-add-all-films-to-a-list="true">
+	<div class="site-header-bg"></div>
+	<section>
+		<h1 class="site-logo">
+			
+			
+
+			
+					
+				<svg class="filter" role="presentation">
+					<filter id="lockup-shadow-filter" x="-20%" y="-100%" width="140%" height="300%"  color-interpolation-filters="sRGB">
+						<feDropShadow dx="0" dy="2" stdDeviation="8"/>
+					</filter>
+				</svg>
+			
+
+					<a href="/" class="logo replace">Letterboxd &mdash; Your life in film</a>
+				
+		</h1>
+		<div class="react-component" data-component-class="NavComponent"></div>
+
+		
+
+
+	
+
+
+
+
+
+<form method="post" action="#" id="signin" class="signin signin-form js-header-signin-form js-signin" data-captcha-action="signin" data-url="/user/login.do" novalidate='novalidate' autocorrect='off' autocapitalize='off'>
+	<input type="hidden" name="__csrf" value="placeholder" />
+	<input type="hidden" name="authenticationCode" value="" />
+	<fieldset class="fieldset">
+		<div class="fields">
+			<div class="col">
+				<label for="username">Username</label>
+				<input type="email" name="username" id="username" class="field signin-field" tabindex="1" data-focus-control="signingIn" autocomplete='email' inputmode='email' value="" />
+			</div>
+			<div class="col">
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" class="field signin-field" tabindex="2" autocomplete='current-password' value="" />
+			</div>
+			<div class="signin-actions">
+				<label for="remember" class="option-label -checkbox -small">
+					<input type="checkbox" name="remember" id="remember" class="checkbox" tabindex="3" value="true" /><i class="substitute"></i>
+					<span class="focus">Remember<span class="mob-hide"> me</span></span>
+				</label>
+				<p class="reset" tabindex="5"><a class="reset-password-link" href="/user/request-password-reset" target="_top">Forgotten<span class="elongated"> username or password</span>?</a></p>
+			</div>
+			<div class="col buttons">
+				<div class="button-container"><input type="submit" value="Sign in" class="button -action button-green" tabindex="4" /><i></i></div>
+				<div class="close js-close-signin">&times;</div>
+			</div>
+		</div>
+	</fieldset>
+	<div id="signin-message" class="errormessage"></div>
+</form>
+
+
+
+		
+			
+
+
+<div class="react-component"
+	data-component-class="AddMenu"
+	data-new-list-url="/list/new/"
+>
+</div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="diary-entry-form-modal" class="modal fade diary-entry-form-modal" attributesText="" tabindex="-1" role="dialog" aria-labelledby="diary-entry-form-modal-title" aria-hidden="true" data-bs-backdrop="static">
+	<div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
+		<div class="modal-content" data-theme="dialog">
+			<div class="modal-header">
+				<h5 class="modal-title" id="diary-entry-form-modal-title">
+					<span data-js-label-for="search">Add to your films…</span>
+					<span data-js-label-for="compose" hidden>I watched…</span>
+					<span data-js-label-for="edit" hidden>Edit diary entry</span>
+				</h5>
+
+				<button type="button" class="diary-entry-form-wizard-backtrigger" data-js-trigger="wizardback" aria-controls="diary-entry-form-8b466501-ce5a-4f7c-84f7-0661e0325b83" aria-label="Return to search" disabled hidden>
+					<span class="label">Back</span>
+				</button>
+
+				<button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				
+				<form method="post" action="/s/save-diary-entry" id="diary-entry-form-8b466501-ce5a-4f7c-84f7-0661e0325b83" class="diary-entry-form js-diary-entry-form" data-js-target='diary-entry-form' data-diary-entry-form-options='{"id": "8b466501-ce5a-4f7c-84f7-0661e0325b83"}' novalidate='novalidate' aria-live='polite'>
+					<input type="hidden" name="__csrf" value="placeholder" />
+					<input type="hidden" name="viewingId" value="" id="frm-viewing-id" />
+					<input type="hidden" name="viewingableUid" value="" id="frm-viewingable-uid" />
+
+					
+
+					<section class="diary-entry-form-wizard-step -search" data-js-wizard-step="search" role="group" aria-roledescription="step" aria-label="1 of 2">
+						<div class="body">
+							<div class="formrow">
+								<label class="_sr-only">Name of Film</label>
+								<input type="text" class="field-large field -reversed -large js-viewingable-type-input" data-url="/s/autocompletefilm" placeholder="Search for film…" />
+
+								<div class="viewingablesuggestion js-viewingablesuggestion" hidden>
+									<span class="label">Or add</span>
+									<button type="button" data-js-trigger="suggestion" class="trigger welltrigger"><span class="label js-label viewingablelabel"></span></button>
+								</div>
+							</div>
+						</div>
+					</section>
+					
+					<section class="diary-entry-form-wizard-step -compose fields-reversed" data-js-wizard-step="compose" role="group" aria-roledescription="step" aria-label="2 of 2" hidden>
+						<div class="header js-header">
+							
+						</div>
+
+						<aside class="figure">
+							<figure class="poster-list -p150 no-hover js-poster-preview">
+								<div class="poster no-poster">
+									<span class="frame"></span>
+								</div>
+							</figure>
+						</aside>
+
+						<div class="body">
+							<div class="formrow datefields">
+								<div class="fieldgroup -specifieddate">
+									<label for="frm-specify-date" class="option-label -checkbox -default -reversed js-specifiy-date">
+										<input type="checkbox" name="specifiedDate" id="frm-specify-date" class="checkbox " value="true" /><i class="substitute"></i>
+										<span id="frm-specify-date-label" class="label js-specify-date-label">Add to your&nbsp;diary?</span>
+									</label>
+									<div class="specifydatecta js-specify-date-cta" hidden>Watched on&nbsp;<button type="button" class="trigger welltrigger" data-js-trigger="datepicker"><span class="label"></span></button></div>
+								</div>
+
+								<div class="fieldgroup -rewatch js-fieldgroup-rewatch">
+									<label for="frm-rewatch" id="frm-rewatch-label" class="option-label -checkbox -default">
+										<input type="checkbox" name="rewatch" id="frm-rewatch" class="checkbox" value="true" /><i class="substitute"></i> 
+										I’ve watched this before
+									</label>
+								</div>
+								<input type="hidden" name="viewingDateStr" id="frm-viewing-date-string" value="" />
+							</div>
+
+							<div class="formrow reviewfields js-reviewfields -is-not-spoilersvisible">
+								<div class="inner">
+									<textarea name="review" id="frm-review" class="field reviewfield" placeholder="Add a review…"></textarea>
+
+									<div class="spoilers">
+										<label for="frm-spoilers" class="spoilercheckbox option-label -checkbox -default">
+											<input type="checkbox" name="containsSpoilers" id="frm-spoilers" class="checkbox" value="true" /><i class="substitute"></i>  
+											Contains spoilers
+										</label>
+
+										<div class="moderatornote form-note js-spoilers-locked-note" hidden>
+											<p>A moderator has locked spoilers for this review</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="formrow tagslikeratingfields">
+								<div class="fieldgroup -tags -has-topnote add-tags">
+									
+									
+
+
+
+
+
+
+
+
+		
+	
+
+<label for="frm-tags">Tags</label>
+<p class="form-note note -topnote">Press <kbd>Tab</kbd> to complete, <kbd>Enter</kbd> to create</p>
+<div class="autocomplete-tags">
+	<div id="tag-container">
+		<input type="text" id="frm-tags" class="tag-input-field field" name="tags" placeholder="eg. netflix" data-url="/s/autocompletetags" />
+	</div>
+	<div id="current-tags" class="js-autocomplete-current-tags">
+		
+	</div>
+</div>
+								</div>
+
+								<div class="fieldgroup -rating -has-topnote">
+									<label>Rating</label>
+									<p class="form-note note rating-text"></p>
+									<input id="frm-rating" name="rating" type="range" min="0" max="10" step="1" value="0"/>
+									<div class="rateit js-rateit" data-rateit-backingfld="#frm-rating" data-rateit-starwidth="13" data-rateit-starheight="26" data-rateit-resetable="true"></div>
+								</div>
+
+								<div class="fieldgroup -like">
+									<label class="option-label -like">
+										<input type="checkbox" name="liked" value="true" class="ajax-working like-checkbox"/><i class="substitute"></i> 
+										Like
+									</label>
+								</div>
+							</div>
+						</div>
+					</section>
+				</form>
+				
+			</div>
+
+
+			
+			<div class="modal-footer js-modal-footer" hidden>
+				<div class="diary-entry-form-controls" data-diary-entry-form-controls-for="diary-entry-form-8b466501-ce5a-4f7c-84f7-0661e0325b83" hidden>
+					<div class="modal-action-group privacygroup show-for-pv">
+						<div class="privacycontrols js-privacycontrols" aria-hidden="true">
+							<label class="label" for="frm-privacy-policy"> 
+								Privacy mode
+								<span class="s icon-14 icon-tip" target="_blank" title="Control who sees the rating, review, tags and like for this entry" data-js-trigger="tooltip"><span class="icon"></span>(Help)</span>
+							</label>
+
+							<select name="privacyPolicyStr" id="frm-privacy-policy" class="select" hidden form='diary-entry-form-8b466501-ce5a-4f7c-84f7-0661e0325b83'>
+								<option value="">Default</option>
+								
+									<option value="Anyone">Anyone (public)</option>
+								
+									<option value="Friends">Close Friends (selected by you)</option>
+								
+									<option value="You">You (private)</option>
+								
+									
+								
+							</select>
+
+							
+	<div class="privacy-policy-menu dropdown-wrapper js-privacy-policy-menu -pending">
+		<button id="privacy-policy-menu-trigger-eb846f68-156f-4f6f-b6e3-68f9e872000d" class="privacy-policy-menu-trigger -default dropdown-trigger" type="button" aria-label="Select privacy policy" aria-haspopup="listbox" aria-expanded="false" aria-controls="privacy-policy-menu-eb846f68-156f-4f6f-b6e3-68f9e872000d-dropdown">
+			<span class="label js-label">…</span>
+		</button>
+
+		<div id="privacy-policy-menu-eb846f68-156f-4f6f-b6e3-68f9e872000d-dropdown" class="dropdown-menu -legacy dropdown-listbox privacy-policy-menu-dropdown" aria-labelledby="privacy-policy-menu-trigger-eb846f68-156f-4f6f-b6e3-68f9e872000d" role="listbox">
+			<div class="header">
+				<h3 class="title js-menutitle"></h3>
+			</div>
+
+			<div class="dropdown-menulist">
+				
+					
+						<div role="none" class="menuitem -trigger -has-icon js-dropdown-child">
+							<button type="button" role="option" data-dismiss="dropdown" data-value="Anyone">
+								
+										<svg class="glyph" role="presentation" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Zm1.73 8.25H6.27c.07 1.53.36 2.93.8 3.96.4.9.8 1.29.93 1.29s.53-.38.92-1.3c.45-1.02.74-2.42.81-3.95Zm-4.96 0H2.05a6 6 0 0 0 3.79 4.85 12.7 12.7 0 0 1-1.07-4.85Zm9.18 0h-2.72a12.7 12.7 0 0 1-1.07 4.85 6 6 0 0 0 3.8-4.85ZM5.84 2.4l-.18.07a6 6 0 0 0-3.61 4.78h2.72A12.7 12.7 0 0 1 5.84 2.4ZM8 2c-.13 0-.53.38-.92 1.3a11.66 11.66 0 0 0-.81 3.95h3.46a11.66 11.66 0 0 0-.8-3.96c-.38-.85-.74-1.24-.9-1.28L8 2Zm2.16.4.01.02c.59 1.22.98 2.92 1.06 4.83h2.72a6 6 0 0 0-3.79-4.85Z"/></svg>
+									
+								<span class="label js-label">Anyone (public)</span>
+							</button>
+						</div>
+					
+				
+					
+						<div role="none" class="menuitem -trigger -has-icon js-dropdown-child">
+							<button type="button" role="option" data-dismiss="dropdown" data-value="Friends">
+								
+										<svg class="glyph" role="presentation" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15ZM8 2a6 6 0 0 0-4.8 2.4 1.04 1.04 0 0 1 1.28.16l.63.63.64-.63a1.04 1.04 0 0 1 1.47 0c.4.4.4 1.06 0 1.47L5.34 7.9a.32.32 0 0 1-.45 0L3.01 6.03a1.04 1.04 0 0 1-.3-.87A5.98 5.98 0 0 0 8 14a6 6 0 0 0 5.29-8.84c.04.3-.06.63-.3.87L11.11 7.9a.32.32 0 0 1-.45 0L8.78 6.03a1.04 1.04 0 1 1 1.47-1.47l.64.63.63-.63a1.03 1.03 0 0 1 1.29-.15A6 6 0 0 0 8 2ZM5.7 9.92a3 3 0 0 0 4.52.1.75.75 0 0 1 1.1 1 4.49 4.49 0 0 1-6.78-.14.75.75 0 0 1 1.16-.96Z"/></svg>
+									
+								<span class="label js-label">Close Friends (selected by you)</span>
+							</button>
+						</div>
+					
+				
+					
+						<div role="none" class="menuitem -trigger -has-icon js-dropdown-child">
+							<button type="button" role="option" data-dismiss="dropdown" data-value="You">
+								
+										<svg class="glyph" role="presentation" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M7.95 1.25c2.35 0 4.25 1.9 4.25 4.25V6h.3a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h.2v-.5c0-2.35 1.9-4.25 4.25-4.25ZM12.5 7.5h-9A.5.5 0 0 0 3 8v6c0 .28.22.5.5.5h9a.5.5 0 0 0 .5-.5V8a.5.5 0 0 0-.5-.5ZM8 9.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm-.05-7A2.75 2.75 0 0 0 5.2 5.5V6h5.5v-.5a2.75 2.75 0 0 0-2.75-2.75Z"/></svg>
+									
+								<span class="label js-label">You (private)</span>
+							</button>
+						</div>
+					
+				
+					
+				
+
+				<div role="none" class="menuitem -divider">
+					<hr />
+				</div>
+
+				<div role="none" class="menuitem -trigger -has-icon -has-policy-icon js-dropdown-child">
+					<button type="button" role="option" data-dismiss="dropdown" data-value="" data-default="true">
+						<svg class="glyph" role="presentation" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.79 7a.7.7 0 0 1 .64.44l.3.77 1 .58.82-.12a.7.7 0 0 1 .7.34l.27.48a.7.7 0 0 1-.05.78l-.5.65v1.16l.51.65a.7.7 0 0 1 .06.78l-.28.48a.7.7 0 0 1-.7.34l-.8-.12-1.02.58-.3.77a.7.7 0 0 1-.64.44h-.58a.7.7 0 0 1-.65-.44l-.3-.77-1-.58-.82.12a.7.7 0 0 1-.7-.34l-.27-.48a.7.7 0 0 1 .05-.78l.51-.65v-1.16l-.52-.65a.7.7 0 0 1-.05-.78l.27-.48a.7.7 0 0 1 .7-.34l.81.12 1.03-.58.3-.77a.7.7 0 0 1 .64-.44h.57ZM6.55 8.9h.1L6.6 9c-.17.28-.25.62-.23.96l.02.17.03.14.04.13h-.3c-1.4.04-2.71.28-3.68.64-.4.14-.7.3-.9.44l-.08.07v.95h5.02A1.7 1.7 0 0 0 6.6 14H0v-2.67C0 10.05 3.02 8.9 6.55 8.9Zm4.95.22a2.37 2.37 0 1 0 0 4.75 2.37 2.37 0 0 0 0-4.74Zm0 1.5a.87.87 0 1 1 0 1.75.87.87 0 0 1 0-1.74ZM6.38 0c1.5 0 2.88 1.53 2.88 3.4 0 1.87-.79 4.1-2.8 4.1-1.9 0-2.81-2.29-2.81-4.15C3.65 1.48 4.87 0 6.38 0Zm0 1.5c-.61 0-1.23.76-1.23 1.85 0 1.5.66 2.65 1.3 2.65.73 0 1.3-1.03 1.3-2.6 0-1.05-.73-1.9-1.37-1.9Z"/></svg>
+						<span class="label js-label">Use account default<span class="labelsupplement js-labelsupplement" hidden></span></span>
+					</button>
+				</div>
+			</div>
+
+			<div class="dropdown-bodytext -note">
+				<p>
+					Your diary date (if set) and watched status for this film remain publicly visible.
+					Ratings on <em>Close Friends</em> and <em>You</em> entries don’t contribute to stats. 
+					Add members to your Close Friends from their profile.
+					Set your account default for Privacy mode in&nbsp;<a href="/settings/">Settings</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+
+						</div>
+
+						<label for="privacy-policy-draft-8b466501-ce5a-4f7c-84f7-0661e0325b83" class="option-label -checkbox -default -reversed drafttoggle">
+							<input id="privacy-policy-draft-8b466501-ce5a-4f7c-84f7-0661e0325b83" class="checkbox" type="checkbox" role="switch" name="privacyPolicyDraft" value="true" form="diary-entry-form-8b466501-ce5a-4f7c-84f7-0661e0325b83" /><i class="substitute"></i>
+							<span class="label">Draft</span>
+						</label>
+
+						<div class="draftnote js-privacydraftnote" aria-hidden="true">Draft entries don’t appear in your watched films or diary for others, and&nbsp;don’t contribute to your&nbsp;stats.</div>
+					</div>
+
+					<div class="modal-action-group formactions">
+						<button form="diary-entry-form-8b466501-ce5a-4f7c-84f7-0661e0325b83" type="button" id="diary-entry-delete-button" class="button-neue -destructive -rounded" data-js-trigger="delete" data-confirm="Are you sure you want to delete this entry? It will disappear from your profile, but remain in your account export bundle for 30&nbsp;days, in a folder of deleted&nbsp;items." disabled><span class="label">Delete</span></button>
+
+						<button form="diary-entry-form-8b466501-ce5a-4f7c-84f7-0661e0325b83" type="submit" class="button-neue -primary -rounded" data-js-trigger="submit" disabled><span class="label">Save</span></button>
+					</div>
+				
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+</div>
+
+		
+		
+		
+		<form id="search" class="js-search-form search-form" action="/search/" method="get" autocorrect="off">
+			<input autocomplete="false" name="hidden" type="text" style="display:none;" />
+			<fieldset>
+				<label for="search-q" class="hidden">Search:</label>
+				<input type="text" name="q" id="search-q" class="field -borderless" data-lpignore='true' inputmode='search' value="" />
+				<input type="submit" value="Search" class="action" />
+			</fieldset>
+		</form>
+		
+	</section>
+</header>
+
+
+
+
+
+
+<main id="content" class="site-body">
+	
+
+
+
+
+
+<article class="page-layout-default page-layout-production-child-page">
+	
+	
+
+<header class="contextual-page-header -margin-block-end -no-body-padding-block-end -backdrop-block-constrained -show-poster-single-column" data-js-contextual-page-header> <div class="body"> <div class="title"> <h1 class="contextual-title prettify"> <span class="context title-all-caps"> Films produced by </span> <span class="name">A24</span> </h1> </div> </div> <div id="content-nav"> <div class="sub-nav-wrapper"></div> <div class="sorting-selects has-hide-toggle"> <section class="smenu-wrapper hide-toggle-menu"> <div class="smenu js-smenu"> <label><span class="ir s hide-toggle-icon">Visibility Filters</span><i class="ir s icon"></i></label> <ul class="smenu-menu" id="hide-toggle-menu"> <li class="divider-line-below"><a href="#" class="item js-film-filter-remover">Remove filters</a></li> <li class="js-account-filters"> <label class="option-label -toggle -small switch-control js-fade-toggle"> <span class="label">Fade watched films</span> <input class="checkbox" type="checkbox" checked="checked" role="switch" /><span class="state"><span class="track"><span class="handle"></span></span></span> </label> </li> <li class="js-account-filters"> <label class="option-label -toggle -small switch-control js-custom-poster-toggle" data-action="/ajax/poster-mode/"> <span class="label">Show custom posters</span> <input class="checkbox" type="checkbox" checked="checked" role="switch" /><span class="state"><span class="track"><span class="handle"></span></span></span> </label> </li> <li class="divider-line js-account-filters"> <span class="smenu-sublabel -uppercase">Custom posters</span> <div class="segmented-control -small custom-poster-control js-custom-poster-control" role="group" aria-label="Change custom poster visibility" data-action="/ajax/poster-mode/"> <div class="options"> <button type="button" class="option" data-js-trigger="option" data-value="All">Any</button> <button type="button" class="option" data-js-trigger="option" data-value="Theirs">Theirs</button> <button type="button" class="option" data-js-trigger="option" data-value="Yours">Yours</button> <button type="button" class="option" data-js-trigger="option" data-value="None">None</button> </div> </div> </li> <li class="divider-line js-account-filters"> <span class="smenu-sublabel -uppercase">Account Filters</span> <ul> <li class="js-film-filter" data-category="watched" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show watched films</a></li> <li class="js-film-filter" data-category="watched" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide watched films</a></li> <li class="js-film-filter divider-line -inset" data-category="liked" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show liked films</a></li> <li class="js-film-filter" data-category="liked" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide liked films</a></li> <li class="js-film-filter divider-line -inset" data-category="rated" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show rated films</a></li> <li class="js-film-filter" data-category="rated" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide rated films</a></li> <li class="js-film-filter divider-line -inset" data-category="logged" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show logged films</a></li> <li class="js-film-filter" data-category="logged" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide logged films</a></li> <li class="js-film-filter divider-line -inset" data-category="rewatched" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show rewatched films</a></li> <li class="js-film-filter" data-category="rewatched" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide rewatched films</a></li> <li class="js-film-filter divider-line -inset" data-category="reviewed" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show reviewed films</a></li> <li class="js-film-filter" data-category="reviewed" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide reviewed films</a></li> <li class="js-film-filter divider-line -inset" data-category="watchlisted" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show films in watchlist</a></li> <li class="js-film-filter" data-category="watchlisted" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide films in watchlist</a></li> <li class="js-film-filter divider-line -inset" data-category="owned" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show films you own</a></li> <li class="js-film-filter" data-category="owned" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide films you own</a></li> <li class="js-film-filter divider-line -inset" data-category="customised" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show films with your custom posters</a></li> <li class="js-film-filter" data-category="customised" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide films with your custom posters</a></li> <li class="js-film-filter divider-line -inset" data-category="customisedbackdrop" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show films with your custom backdrops</a></li> <li class="js-film-filter" data-category="customisedbackdrop" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide films with your custom backdrops</a></li> <li class="js-film-filter divider-line -inset" data-category="addedprivatenote" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show films with private notes</a></li> <li class="js-film-filter" data-category="addedprivatenote" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide films with private notes</a></li> </ul> </li> <li class="divider-line js-film-filters"> <span class="smenu-sublabel -uppercase">Content Filters</span> <ul> <li class="js-film-filter" data-category="shorts" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show short films</a></li> <li class="js-film-filter" data-category="shorts" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide short films</a></li> <li class="js-film-filter divider-line -inset" data-category="tv" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show TV shows</a></li> <li class="js-film-filter" data-category="tv" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide TV shows</a></li> <li class="js-film-filter divider-line -inset" data-category="docs" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide documentaries</a></li> <li class="js-film-filter divider-line -inset" data-category="unreleased" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide unreleased titles</a></li> <li class="js-film-filter divider-line -inset" data-category="obscure" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show obscure films</a></li> <li class="js-film-filter" data-category="obscure" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide obscure films</a></li> <li class="js-film-filter divider-line -inset" data-category="vobscure" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show very obscure films</a></li> <li class="js-film-filter" data-category="vobscure" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide very obscure films</a></li> <li class="js-film-filter divider-line -inset" data-category="backdropped" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show films with backdrop</a></li> <li class="js-film-filter" data-category="backdropped" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide films with backdrop</a></li> <li class="js-film-filter divider-line -inset" data-category="nanocrowd" data-type="show"><a class="item" href="#"><i class="ir s icon"></i>Show Nanocrowd films</a></li> <li class="js-film-filter" data-category="nanocrowd" data-type="hide"><a class="item" href="#"><i class="ir s icon"></i>Hide Nanocrowd films</a></li> </ul> </li> </ul> </div> </section> <section class="smenu-wrapper"> <strong class="smenu-label">Sort by</strong> <div class="smenu js-smenu"> <label>Popularity<i class="ir s icon"></i></label> <ul class="smenu-menu"> <li class=""><a class="item" href="/studio/a24/by/billing/">Billing Order</a></li> <li class=""><a class="item" href="/studio/a24/by/name/">Film Name</a></li> <li class=""><span class="smenu-sublabel">Release Date</span> <ul> <li class=""><a class="item" href="/studio/a24/by/release/">Newest First</a></li> <li class=""><a class="item" href="/studio/a24/by/release-earliest/">Earliest First</a></li> </ul></li> <li class=""><span class="smenu-sublabel">Average Rating</span> <ul> <li class=""><a class="item" href="/studio/a24/by/rating/">Highest First</a></li> <li class=""><a class="item" href="/studio/a24/by/rating-lowest/">Lowest First</a></li> </ul></li> <li class=" show-when-logged-in"><span class="smenu-sublabel">Your Rating</span> <ul> <li class=" show-when-logged-in"><a class="item" href="/studio/a24/by/your-rating/">Highest First</a></li> <li class=" show-when-logged-in"><a class="item" href="/studio/a24/by/your-rating-lowest/">Lowest First</a></li> </ul></li> <li class=""><span class="smenu-sublabel">Film Length</span> <ul> <li class=""><a class="item" href="/studio/a24/by/shortest/">Shortest First</a></li> <li class=""><a class="item" href="/studio/a24/by/longest/">Longest First</a></li> </ul></li> <li class=""><span class="smenu-sublabel">Popularity</span> <ul> <li class=" smenu-subselected"><a class="item" href="/studio/a24/popular/"><i class="ir s icon"></i>All Time</a></li> <li class=""><a class="item" href="/studio/a24/popular/this/week/">This Week</a></li> <li class=""><a class="item" href="/studio/a24/popular/this/month/">This Month</a></li> <li class=""><a class="item" href="/studio/a24/popular/this/year/">This Year</a></li> </ul></li> </ul> </div> </section> 
+
+<section class="smenu-wrapper"> <div class="smenu js-smenu"> <label>Service<i class="ir s icon"></i> </label> <ul id="services-menu" class="smenu-menu" data-upgrade-url="/pro/"> <li class= " availability-amazon " > <a href="/studio/a24/on/amazon-usa/" class="item">Amazon US</a> </li> <li class= " availability-amazon-video " > <a href="/studio/a24/on/amazon-video-us/" class="item">Amazon Video US</a> </li> <li class= " availability-apple-tv-plus " > <a href="/studio/a24/on/apple-tv-plus-us/" class="item">Apple TV US</a> </li> <li class= " availability-apple-itunes " > <a href="/studio/a24/on/apple-itunes-us/" class="item">Apple TV Store US</a> </li> <li class="note divider-line -upgrade"> <p>Upgrade to a <a href="/pro/">Letterboxd <span class="badge -pro -small">Pro</span></a> account to add your favorite services to this list—including any service and country pair listed on JustWatch—and to enable one-click filtering by all your favorites.</p></li> <li><a class="item item-small" href="https://www.justwatch.com" target="_blank" rel="noopener noreferrer"><small>Powered by JustWatch</small></a></li> </ul> </div> </section>
+ <section class="smenu-wrapper"> <div class="smenu js-smenu"> <label> Genre<i class="ir s icon"></i> </label> <ul class="smenu-menu"> <li class="smenu-subselected"><span class="selected">Any genre</span></li> <li class="divider-line"> <ul> <li class=""><a href="/studio/a24/genre/action/" class="item"><i class="ir s icon"></i>Action</a></li> <li class=""><a href="/studio/a24/genre/adventure/" class="item"><i class="ir s icon"></i>Adventure</a></li> <li class=""><a href="/studio/a24/genre/animation/" class="item"><i class="ir s icon"></i>Animation</a></li> <li class=""><a href="/studio/a24/genre/comedy/" class="item"><i class="ir s icon"></i>Comedy</a></li> <li class=""><a href="/studio/a24/genre/crime/" class="item"><i class="ir s icon"></i>Crime</a></li> <li class=""><a href="/studio/a24/genre/documentary/" class="item"><i class="ir s icon"></i>Documentary</a></li> <li class=""><a href="/studio/a24/genre/drama/" class="item"><i class="ir s icon"></i>Drama</a></li> <li class=""><a href="/studio/a24/genre/family/" class="item"><i class="ir s icon"></i>Family</a></li> <li class=""><a href="/studio/a24/genre/fantasy/" class="item"><i class="ir s icon"></i>Fantasy</a></li> <li class=""><a href="/studio/a24/genre/history/" class="item"><i class="ir s icon"></i>History</a></li> <li class=""><a href="/studio/a24/genre/horror/" class="item"><i class="ir s icon"></i>Horror</a></li> <li class=""><a href="/studio/a24/genre/music/" class="item"><i class="ir s icon"></i>Music</a></li> <li class=""><a href="/studio/a24/genre/mystery/" class="item"><i class="ir s icon"></i>Mystery</a></li> <li class=""><a href="/studio/a24/genre/romance/" class="item"><i class="ir s icon"></i>Romance</a></li> <li class=""><a href="/studio/a24/genre/science-fiction/" class="item"><i class="ir s icon"></i>Science Fiction</a></li> <li class=""><a href="/studio/a24/genre/thriller/" class="item"><i class="ir s icon"></i>Thriller</a></li> <li class=""><a href="/studio/a24/genre/tv-movie/" class="item"><i class="ir s icon"></i>TV Movie</a></li> <li class=""><a href="/studio/a24/genre/war/" class="item"><i class="ir s icon"></i>War</a></li> <li class=""><a href="/studio/a24/genre/western/" class="item"><i class="ir s icon"></i>Western</a></li> </ul> </li> </ul> </div> </section> <section class="smenu-wrapper"> <div class="smenu js-smenu"> <label class="x"> Decade<i class="ir s icon"></i> </label> <ul class="smenu-menu"> <li class="smenu-subselected"><span class="selected">Any decade</span></li> <li class="divider-line"><a href="/studio/a24/upcoming/" class="item">Upcoming</a></li> <li class=""><a href="/studio/a24/decade/2020s/" class="item">2020s</a></li> <li class=""><a href="/studio/a24/decade/2010s/" class="item">2010s</a></li> <li class=""><a href="/studio/a24/decade/2000s/" class="item">2000s</a></li> <li class=""><a href="/studio/a24/decade/1990s/" class="item">1990s</a></li> <li class=""><a href="/studio/a24/decade/1980s/" class="item">1980s</a></li> <li class=""><a href="/studio/a24/decade/1970s/" class="item">1970s</a></li> <li class=""><a href="/studio/a24/decade/1960s/" class="item">1960s</a></li> <li class=""><a href="/studio/a24/decade/1950s/" class="item">1950s</a></li> <li class=""><a href="/studio/a24/decade/1940s/" class="item">1940s</a></li> <li class=""><a href="/studio/a24/decade/1930s/" class="item">1930s</a></li> <li class=""><a href="/studio/a24/decade/1920s/" class="item">1920s</a></li> <li class=""><a href="/studio/a24/decade/1910s/" class="item">1910s</a></li> <li class=""><a href="/studio/a24/decade/1900s/" class="item">1900s</a></li> <li class=""><a href="/studio/a24/decade/1890s/" class="item">1890s</a></li> <li class=""><a href="/studio/a24/decade/1880s/" class="item">1880s</a></li> <li class=""><a href="/studio/a24/decade/1870s/" class="item">1870s</a></li> <li class=""><a href="/studio/a24/decade/1860s/" class="item">1860s</a></li> <li class=""><a href="/studio/a24/decade/1850s/" class="item">1850s</a></li> </ul> </div> </section> </div> <div class="clear"></div> </div> </header>
+
+
+<div class="body">
+	
+
+	
+	
+	
+			
+
+			<div class="poster-grid">
+				<ul class="grid -grid -p150 -fixed-gap clear">
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Everything Everywhere All at Once (2022)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Everything Everywhere All at Once (2022)" data-item-slug="everything-everywhere-all-at-once" data-item-link="/film/everything-everywhere-all-at-once/" data-item-full-display-name="Everything Everywhere All at Once (2022)" data-postered-identifier='{&quot;lid&quot;:&quot;jUk4&quot;,&quot;uid&quot;:&quot;film:474474&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;jUk4&quot;,&quot;uid&quot;:&quot;film:474474&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/everything-everywhere-all-at-once/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;37e0b8ea&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/everything-everywhere-all-at-once/" data-details-endpoint="/film/everything-everywhere-all-at-once/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Everything Everywhere All at Once"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Marty Supreme (2025)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Marty Supreme (2025)" data-item-slug="marty-supreme" data-item-link="/film/marty-supreme/" data-item-full-display-name="Marty Supreme (2025)" data-postered-identifier='{&quot;lid&quot;:&quot;Off0&quot;,&quot;uid&quot;:&quot;film:1197499&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;Off0&quot;,&quot;uid&quot;:&quot;film:1197499&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/marty-supreme/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;f0c5e91c&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/marty-supreme/" data-details-endpoint="/film/marty-supreme/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Marty Supreme"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Backrooms (2026)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Backrooms (2026)" data-item-slug="backrooms-2026" data-item-link="/film/backrooms-2026/" data-item-full-display-name="Backrooms (2026)" data-postered-identifier='{&quot;lid&quot;:&quot;EY6W&quot;,&quot;uid&quot;:&quot;film:976419&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;EY6W&quot;,&quot;uid&quot;:&quot;film:976419&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/backrooms-2026/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;645df353&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/backrooms-2026/" data-details-endpoint="/film/backrooms-2026/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Backrooms"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="The Drama (2026)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="The Drama (2026)" data-item-slug="the-drama" data-item-link="/film/the-drama/" data-item-full-display-name="The Drama (2026)" data-postered-identifier='{&quot;lid&quot;:&quot;OA2w&quot;,&quot;uid&quot;:&quot;film:1205494&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;OA2w&quot;,&quot;uid&quot;:&quot;film:1205494&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/the-drama/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;41410a7e&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/the-drama/" data-details-endpoint="/film/the-drama/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="The Drama"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Pearl (2022)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Pearl (2022)" data-item-slug="pearl-2022" data-item-link="/film/pearl-2022/" data-item-full-display-name="Pearl (2022)" data-postered-identifier='{&quot;lid&quot;:&quot;zPbe&quot;,&quot;uid&quot;:&quot;film:853822&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;zPbe&quot;,&quot;uid&quot;:&quot;film:853822&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/pearl-2022/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;40244f30&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/pearl-2022/" data-details-endpoint="/film/pearl-2022/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Pearl"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Past Lives (2023)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Past Lives (2023)" data-item-slug="past-lives" data-item-link="/film/past-lives/" data-item-full-display-name="Past Lives (2023)" data-postered-identifier='{&quot;lid&quot;:&quot;oNB8&quot;,&quot;uid&quot;:&quot;film:591053&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;oNB8&quot;,&quot;uid&quot;:&quot;film:591053&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/past-lives/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;639a95e0&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/past-lives/" data-details-endpoint="/film/past-lives/json/" data-poster-freely-customisable="true" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Past Lives"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="The Lighthouse (2019)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="The Lighthouse (2019)" data-item-slug="the-lighthouse-2019" data-item-link="/film/the-lighthouse-2019/" data-item-full-display-name="The Lighthouse (2019)" data-postered-identifier='{&quot;lid&quot;:&quot;icFU&quot;,&quot;uid&quot;:&quot;film:433863&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;icFU&quot;,&quot;uid&quot;:&quot;film:433863&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/the-lighthouse-2019/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;ff9662ed&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/the-lighthouse-2019/" data-details-endpoint="/film/the-lighthouse-2019/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="The Lighthouse"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Moonlight (2016)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Moonlight (2016)" data-item-slug="moonlight-2016" data-item-link="/film/moonlight-2016/" data-item-full-display-name="Moonlight (2016)" data-postered-identifier='{&quot;lid&quot;:&quot;d6bE&quot;,&quot;uid&quot;:&quot;film:312205&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;d6bE&quot;,&quot;uid&quot;:&quot;film:312205&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/moonlight-2016/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;c6907c8d&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/moonlight-2016/" data-details-endpoint="/film/moonlight-2016/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Moonlight"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="X (2022)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="X (2022)" data-item-slug="x-2022" data-item-link="/film/x-2022/" data-item-full-display-name="X (2022)" data-postered-identifier='{&quot;lid&quot;:&quot;sxVa&quot;,&quot;uid&quot;:&quot;film:680358&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;sxVa&quot;,&quot;uid&quot;:&quot;film:680358&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/x-2022/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;ae10d5a8&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/x-2022/" data-details-endpoint="/film/x-2022/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="X"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Uncut Gems (2019)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Uncut Gems (2019)" data-item-slug="uncut-gems" data-item-link="/film/uncut-gems/" data-item-full-display-name="Uncut Gems (2019)" data-postered-identifier='{&quot;lid&quot;:&quot;gXGc&quot;,&quot;uid&quot;:&quot;film:404266&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;gXGc&quot;,&quot;uid&quot;:&quot;film:404266&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/uncut-gems/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;2392daf2&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/uncut-gems/" data-details-endpoint="/film/uncut-gems/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Uncut Gems"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Materialists (2025)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Materialists (2025)" data-item-slug="materialists" data-item-link="/film/materialists/" data-item-full-display-name="Materialists (2025)" data-postered-identifier='{&quot;lid&quot;:&quot;GZlW&quot;,&quot;uid&quot;:&quot;film:1024562&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;GZlW&quot;,&quot;uid&quot;:&quot;film:1024562&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/materialists/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;f4907b22&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/materialists/" data-details-endpoint="/film/materialists/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Materialists"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Heretic (2024)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Heretic (2024)" data-item-slug="heretic-2024" data-item-link="/film/heretic-2024/" data-item-full-display-name="Heretic (2024)" data-postered-identifier='{&quot;lid&quot;:&quot;H1lY&quot;,&quot;uid&quot;:&quot;film:1025331&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;H1lY&quot;,&quot;uid&quot;:&quot;film:1025331&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/heretic-2024/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;7db787ac&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/heretic-2024/" data-details-endpoint="/film/heretic-2024/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Heretic"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="The Whale (2022)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="The Whale (2022)" data-item-slug="the-whale-2022" data-item-link="/film/the-whale-2022/" data-item-full-display-name="The Whale (2022)" data-postered-identifier='{&quot;lid&quot;:&quot;tw4c&quot;,&quot;uid&quot;:&quot;film:703478&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;tw4c&quot;,&quot;uid&quot;:&quot;film:703478&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/the-whale-2022/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;dda9329b&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/the-whale-2022/" data-details-endpoint="/film/the-whale-2022/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="The Whale"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="The Iron Claw (2023)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="The Iron Claw (2023)" data-item-slug="the-iron-claw-2023" data-item-link="/film/the-iron-claw-2023/" data-item-full-display-name="The Iron Claw (2023)" data-postered-identifier='{&quot;lid&quot;:&quot;w5Pm&quot;,&quot;uid&quot;:&quot;film:764890&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;w5Pm&quot;,&quot;uid&quot;:&quot;film:764890&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/the-iron-claw-2023/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;0c8ff784&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/the-iron-claw-2023/" data-details-endpoint="/film/the-iron-claw-2023/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="The Iron Claw"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Bodies Bodies Bodies (2022)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Bodies Bodies Bodies (2022)" data-item-slug="bodies-bodies-bodies" data-item-link="/film/bodies-bodies-bodies/" data-item-full-display-name="Bodies Bodies Bodies (2022)" data-postered-identifier='{&quot;lid&quot;:&quot;iRcE&quot;,&quot;uid&quot;:&quot;film:449442&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;iRcE&quot;,&quot;uid&quot;:&quot;film:449442&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/bodies-bodies-bodies/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;59636903&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/bodies-bodies-bodies/" data-details-endpoint="/film/bodies-bodies-bodies/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Bodies Bodies Bodies"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="I Saw the TV Glow (2024)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="I Saw the TV Glow (2024)" data-item-slug="i-saw-the-tv-glow" data-item-link="/film/i-saw-the-tv-glow/" data-item-full-display-name="I Saw the TV Glow (2024)" data-postered-identifier='{&quot;lid&quot;:&quot;woVe&quot;,&quot;uid&quot;:&quot;film:772230&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;woVe&quot;,&quot;uid&quot;:&quot;film:772230&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/i-saw-the-tv-glow/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;98794df7&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/i-saw-the-tv-glow/" data-details-endpoint="/film/i-saw-the-tv-glow/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="I Saw the TV Glow"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Bring Her Back (2025)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Bring Her Back (2025)" data-item-slug="bring-her-back" data-item-link="/film/bring-her-back/" data-item-full-display-name="Bring Her Back (2025)" data-postered-identifier='{&quot;lid&quot;:&quot;Hxlc&quot;,&quot;uid&quot;:&quot;film:1037627&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;Hxlc&quot;,&quot;uid&quot;:&quot;film:1037627&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/bring-her-back/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;70ee7792&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/bring-her-back/" data-details-endpoint="/film/bring-her-back/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Bring Her Back"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Civil War (2024)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Civil War (2024)" data-item-slug="civil-war-2024" data-item-link="/film/civil-war-2024/" data-item-full-display-name="Civil War (2024)" data-postered-identifier='{&quot;lid&quot;:&quot;z1jW&quot;,&quot;uid&quot;:&quot;film:834656&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;z1jW&quot;,&quot;uid&quot;:&quot;film:834656&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/civil-war-2024/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;5d277c42&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/civil-war-2024/" data-details-endpoint="/film/civil-war-2024/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Civil War"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="The Zone of Interest (2023)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="The Zone of Interest (2023)" data-item-slug="the-zone-of-interest" data-item-link="/film/the-zone-of-interest/" data-item-full-display-name="The Zone of Interest (2023)" data-postered-identifier='{&quot;lid&quot;:&quot;gJsA&quot;,&quot;uid&quot;:&quot;film:398800&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;gJsA&quot;,&quot;uid&quot;:&quot;film:398800&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/the-zone-of-interest/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;17291f3b&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/the-zone-of-interest/" data-details-endpoint="/film/the-zone-of-interest/json/" data-poster-freely-customisable="true" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="The Zone of Interest"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="MaXXXine (2024)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="MaXXXine (2024)" data-item-slug="maxxxine" data-item-link="/film/maxxxine/" data-item-full-display-name="MaXXXine (2024)" data-postered-identifier='{&quot;lid&quot;:&quot;CIM4&quot;,&quot;uid&quot;:&quot;film:922858&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;CIM4&quot;,&quot;uid&quot;:&quot;film:922858&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/maxxxine/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;8aa619e5&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/maxxxine/" data-details-endpoint="/film/maxxxine/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="MaXXXine"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Eternity (2025)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Eternity (2025)" data-item-slug="eternity-2025-1" data-item-link="/film/eternity-2025-1/" data-item-full-display-name="Eternity (2025)" data-postered-identifier='{&quot;lid&quot;:&quot;LYtK&quot;,&quot;uid&quot;:&quot;film:1143390&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;LYtK&quot;,&quot;uid&quot;:&quot;film:1143390&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/eternity-2025-1/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;6884377e&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/eternity-2025-1/" data-details-endpoint="/film/eternity-2025-1/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Eternity"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Primetime (2026)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Primetime (2026)" data-item-slug="primetime-2026" data-item-link="/film/primetime-2026/" data-item-full-display-name="Primetime (2026)" data-postered-identifier='{&quot;lid&quot;:&quot;QX5s&quot;,&quot;uid&quot;:&quot;film:1262019&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;QX5s&quot;,&quot;uid&quot;:&quot;film:1262019&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/primetime-2026/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;97205c9a&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/primetime-2026/" data-details-endpoint="/film/primetime-2026/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Primetime"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="Babygirl (2024)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="Babygirl (2024)" data-item-slug="babygirl-2024" data-item-link="/film/babygirl-2024/" data-item-full-display-name="Babygirl (2024)" data-postered-identifier='{&quot;lid&quot;:&quot;Fvai&quot;,&quot;uid&quot;:&quot;film:989125&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;Fvai&quot;,&quot;uid&quot;:&quot;film:989125&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/babygirl-2024/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;0ff0b2d1&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/babygirl-2024/" data-details-endpoint="/film/babygirl-2024/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="Babygirl"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+						<li
+							
+							class="tooltip griditem"
+							title="mid90s (2018)"
+						>
+							<div class="react-component" data-component-class="LazyPoster" data-request-poster-metadata="true" data-likeable="true" data-watchable="true" data-rateable="true" data-image-width="150" data-image-height="225" data-item-name="mid90s (2018)" data-item-slug="mid90s" data-item-link="/film/mid90s/" data-item-full-display-name="mid90s (2018)" data-postered-identifier='{&quot;lid&quot;:&quot;fxIa&quot;,&quot;uid&quot;:&quot;film:370451&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;}' data-resolvable-poster-path='{&quot;postered&quot;:{&quot;lid&quot;:&quot;fxIa&quot;,&quot;uid&quot;:&quot;film:370451&quot;,&quot;type&quot;:&quot;film&quot;,&quot;typeName&quot;:&quot;film&quot;},&quot;posteredBaseLink&quot;:&quot;/film/mid90s/&quot;,&quot;isAdultThemed&quot;:false,&quot;hasDefaultPoster&quot;:true,&quot;cacheBustingKey&quot;:&quot;6f849b8e&quot;}' data-empty-poster-src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" data-is-linked="true" data-target-link="/film/mid90s/" data-details-endpoint="/film/mid90s/json/" data-show-menu="true" data-hide-tooltip="true" > <div class="poster film-poster"> <img src="https://s.ltrbxd.com/static/img/empty-poster-150-DtnLDE3k.png" class="image" width="150" height="225" alt="mid90s"/> <span class="frame"><span class="frame-title"></span></span> </div> </div>
+						</li>
+					
+				</ul>
+			</div>
+			<div class="pagination"> <div class="paginate-nextprev paginate-disabled"><span class="previous">Previous</span></div> <div class="paginate-nextprev"><a class="next" href="/studio/a24/page/2/">Next</a></div> <div class="paginate-pages"> <ul> <li class="paginate-page paginate-current"><span>1</span></li> <li class="paginate-page"><a href="/studio/a24/page/2/">2</a></li> <li class="paginate-page"><a href="/studio/a24/page/3/">3</a></li> <li class="paginate-page unseen-pages">&hellip;</li> <li class="paginate-page"><a href="/studio/a24/page/9/">9</a></li> </ul> </div> </div>
+		
+</div>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+	
+
+	
+
+	</main> 
+
+
+
+	<footer id="page-footer" class="page-footer js-page-footer js-hide-in-app">
+		<div class="content-wrap">
+			
+				<nav class="footer-nav js-footer-nav">
+					<ul>
+						<li><a href="/about/">About</a></li>
+						<li class="js-hide-in-app"><a href="/pro/">Pro</a></li>
+						<li><a href="/journal/">News</a></li>
+						<li><a href="/apps/">Apps</a></li>
+						<li><a href="https://support.letterboxd.com" target="_blank">Help</a></li>
+						<li><a href="/year-in-review/">Year in Review</a></li>
+						
+<li><a href="/video-store/">Video Store</a></li>
+
+						<li><a href="/gift-guide/">Gifts</a></li>
+						<li><a href="/legal/terms-of-use/">Terms</a></li>
+						<li><a href="/api-beta/">API</a></li>
+						<li><a href="/contact/">Contact</a></li>
+					</ul>
+				</nav>
+	
+
+			<div class="socials">
+				<nav class="social-service-list -inline">
+					<div class="listitem -icononly">
+						<a class="trigger tooltip" href="https://www.instagram.com/letterboxd" target="_blank" rel="noopener noreferrer" title="Letterboxd on Instagram">
+							<svg class="glyph" aria-hidden="true" role="presentation" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M14.12.06c1.07.05 1.8.22 2.43.46.66.26 1.21.6 1.77 1.16.56.55.9 1.11 1.15 1.77.25.63.42 1.36.47 2.43.04.94.06 1.32.06 3.3v1.37c0 1.54 0 2.19-.03 2.77v.22l-.03.58a7.34 7.34 0 0 1-.47 2.43 4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.16c-.64.24-1.36.41-2.43.46l-.61.03h-.23c-.5.02-1.06.03-2.21.03H9.2c-2 0-2.37-.02-3.32-.06a7.34 7.34 0 0 1-2.43-.46 4.9 4.9 0 0 1-1.77-1.16 4.9 4.9 0 0 1-1.16-1.77 7.34 7.34 0 0 1-.46-2.43l-.03-.61v-.2A60.9 60.9 0 0 1 0 11.5V8.75C0 7.7.01 7.17.03 6.7v-.2l.03-.61C.1 4.8.28 4.08.52 3.45a4.9 4.9 0 0 1 1.16-1.77A4.9 4.9 0 0 1 3.45.52 7.34 7.34 0 0 1 5.88.06l.61-.03h.2C7.12 0 7.6 0 8.5 0h2.74c1.62 0 2 .02 2.88.06ZM11.02 2H8.97c-1.7 0-2.05.02-2.92.06a5.4 5.4 0 0 0-1.82.33c-.45.18-.78.39-1.12.73-.34.34-.55.67-.73 1.12-.13.35-.3.86-.33 1.82C2.02 6.93 2 7.29 2 8.98v2.04c0 1.7.02 2.05.06 2.92.04.95.2 1.47.33 1.81.18.46.39.78.73 1.13.34.34.67.55 1.12.73.35.13.86.29 1.82.33.83.04 1.2.05 2.7.06h2.47c1.51 0 1.87-.02 2.71-.06a5.4 5.4 0 0 0 1.81-.33c.46-.18.78-.4 1.12-.73.35-.35.56-.67.73-1.13.14-.34.3-.86.34-1.8a49 49 0 0 0 .06-2.72V8.77a49 49 0 0 0-.06-2.71 5.4 5.4 0 0 0-.34-1.82 3.02 3.02 0 0 0-.73-1.12 3.02 3.02 0 0 0-1.12-.73 5.4 5.4 0 0 0-1.81-.33c-.88-.04-1.23-.06-2.93-.06ZM10 4.86a5.14 5.14 0 1 1 0 10.28 5.14 5.14 0 0 1 0-10.28ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+							<span class="label">Instagram</span>
+						</a>
+					</div>
+
+					
+						<div class="listitem -icononly">
+							<a class="trigger tooltip" href="https://www.threads.net/@letterboxd" target="_blank" rel="noopener noreferrer" title="Letterboxd on Threads">
+								<svg class="glyph" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" width="16" height="18"><path fill-rule="nonzero" d="M8.1 0c2.8 0 4.9.9 6.3 2.6.7.9 1.3 1.9 1.6 3v.1l-1.6.4c-.3-1-.7-1.8-1.3-2.4-1.1-1.3-2.8-2-5-2-2.1 0-3.8.7-4.9 2-1 1.2-1.5 3-1.5 5.3s.5 4 1.5 5.3c1.1 1.3 2.8 2 5 2 1.9 0 3.2-.4 4.3-1.5 1-1 1.3-2.4.8-3.5-.2-.5-.6-1-1.1-1.2-.2 1-.5 1.7-1 2.3-.7.8-1.6 1.3-2.8 1.3-1 .1-1.8-.1-2.5-.6A2.8 2.8 0 0 1 4.5 11C4.5 9 6 7.8 8.2 7.6l2.3.1c-.1-.5-.3-.9-.6-1.2-.4-.4-1-.6-1.7-.7-.9 0-1.6.3-2 1H6L4.7 6a4 4 0 0 1 3.5-1.7c2.3 0 3.8 1.4 4 3.8v.2h.2v.1c1.2.5 2 1.3 2.4 2.3.8 1.7.5 3.8-1.1 5.4A7.4 7.4 0 0 1 8 18c-2.7 0-4.8-1-6.2-2.6A10 10 0 0 1 0 9c0-2.7.7-4.8 2-6.4C3.2 1 5.3 0 8 0ZM9 9.3h-.6c-1.4 0-2.1.7-2 1.5 0 .8.9 1.3 2 1.3.6 0 1-.2 1.4-.5.4-.4.7-1 .8-2v-.2A8 8 0 0 0 9 9.3h-.1Z"/></svg>
+								<span class="label">Threads</span>
+							</a>
+						</div>
+					
+
+					<div class="listitem -icononly">
+						<a class="trigger tooltip" href="https://x.com/letterboxd" target="_blank" rel="noopener noreferrer" title="Letterboxd on X">
+							<svg class="glyph" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" width="17" height="17"><path fill-rule="nonzero" d="m5.4 0 4 6 5-6h2.1l-.3.4-5.9 6.8 6.5 9.5.2.3h-5.3l-4.3-6.3L2 16.9 2 17H0l.3-.4 6.2-7.2L.3.4 0 0h5.3Zm-1 1.5H2.9l4.9 7 .6.9 4.3 6.1h1.6l-5-7.3-.7-.9-4-5.8Z"/></svg>
+							<span class="label">X</span>
+						</a>
+					</div>
+
+					
+						<div class="listitem -icononly">
+							<a class="trigger tooltip" href="https://bsky.app/profile/letterboxd.social" target="_blank" rel="noopener noreferrer" title="Letterboxd on Bluesky">
+								<svg class="glyph" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" width="19" height="17"><path fill="#000" fill-rule="nonzero" d="M4.15 1.14C6.34 2.81 8.7 6.18 9.56 7.98c.87-1.8 3.23-5.17 5.42-6.84 1.58-1.2 4.14-2.12 4.14.83 0 .59-.33 4.95-.53 5.66-.68 2.46-3.17 3.1-5.38 2.71 3.87.67 4.85 2.87 2.73 5.07-4.04 4.18-5.8-1.05-6.26-2.39-.08-.25-.12-.36-.12-.26 0-.1-.04.01-.12.26-.45 1.34-2.22 6.57-6.25 2.39-2.13-2.2-1.14-4.4 2.72-5.07-2.2.38-4.7-.25-5.38-2.7C.33 6.91 0 2.55 0 1.96 0-.98 2.56-.05 4.15 1.14Z"/></svg>
+								<span class="label">Bluesky</span>
+							</a>
+						</div>
+					
+
+					<div class="listitem -icononly">
+						<a class="trigger tooltip" href="https://www.facebook.com/letterboxd" target="_blank" rel="noopener noreferrer" title="Letterboxd on Facebook">
+							<svg class="glyph" aria-hidden="true" role="presentation" width="19" height="19" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 0a9.5 9.5 0 0 0-1.48 18.89V12H5.6V9.25h2.42V7.41c0-2.38 1.41-3.7 3.58-3.7 1.04 0 2.13.19 2.13.19v2.33h-1.2c-1.18 0-1.54.74-1.54 1.49v1.53h2.63L13.2 12h-2.21v6.89A9.5 9.5 0 0 0 9.5 0Z"/></svg>
+							<span class="label">Facebook</span>
+						</a>
+					</div>
+
+					<div class="listitem -icononly">
+						<a class="trigger tooltip" href="https://www.tiktok.com/@letterboxd" target="_blank" rel="noopener noreferrer" title="Letterboxd on TikTok">
+							<svg class="glyph" aria-hidden="true" role="presentation" width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M16.48 4.32a4.62 4.62 0 0 1-3.92-2.66A4.04 4.04 0 0 1 12.23 0H9.07v11.85c0 1.93-1.19 3.07-2.65 3.07a2.71 2.71 0 0 1-2.04-.9 2.57 2.57 0 0 1-.6-2.1 2.55 2.55 0 0 1 1.26-1.81 2.7 2.7 0 0 1 2.24-.21V6.77a5.92 5.92 0 0 0-4.08.86 5.7 5.7 0 0 0-2.15 2.55 5.53 5.53 0 0 0 1.26 6.16 5.86 5.86 0 0 0 6.33 1.23 5.78 5.78 0 0 0 2.6-2.08c.64-.94.98-2.03.98-3.15V5.96a7.74 7.74 0 0 0 4.25 1.25V4.32Z"/></svg>
+							<span class="label">TikTok</span>
+						</a>
+					</div>
+
+					<div class="listitem -icononly">
+						<a class="trigger tooltip" href="https://www.youtube.com/letterboxdhq" target="_blank" rel="noopener noreferrer" title="Letterboxd on YouTube">
+							<svg class="glyph" aria-hidden="true" role="presentation" width="23" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M11.74 0c.61 0 2.33.02 4.11.08l.54.02c1.7.06 3.35.18 4.1.38a2.87 2.87 0 0 1 2.03 2.02c.45 1.67.48 5.04.48 5.46v.08c0 .42-.03 3.8-.48 5.46a2.87 2.87 0 0 1-2.03 2.02c-.75.2-2.4.32-4.1.38l-.54.02c-1.78.07-3.5.08-4.11.08H11.26c-.62 0-2.33-.01-4.11-.08l-.54-.02c-1.7-.06-3.36-.18-4.1-.38A2.87 2.87 0 0 1 .48 13.5C.04 11.9 0 8.68 0 8.1v-.2c0-.58.04-3.79.48-5.4A2.87 2.87 0 0 1 2.5.48c.74-.2 2.4-.32 4.1-.38l.54-.02C8.93.02 10.65 0 11.26 0ZM9 4.57v6.86L15 8 9 4.57Z"/></svg>
+							<span class="label">YouTube</span>
+						</a>
+					</div>
+				</nav>
+			</div>
+			
+			<p class="copyright">
+				&copy; Letterboxd Limited. Made by <a href="/crew/" class="mute">fans</a> in Aotearoa New Zealand.
+				<span class="nobr"><a href="https://letterboxd.com/about/film-data/" class="mute">Film data</a> from <a href="https://www.themoviedb.org" class="mute">TMDB</a>. <a href="/legal/privacy-notice/" class="mute">Privacy</a>. <span class="js-consent-settings" hidden><a href="?fc=alwaysshow&amp;fctype=gdpr" class="mute">Cookies</a>. </span>
+				
+						<a href="#" class="mute js-mobile-site-switch" data-use-mobile-site="yes">Mobile&nbsp;site</a>.
+					
+	</span>
+			</p>
+		</div>
+	</footer>
+
+
+
+
+
+	
+
+
+
+
+
+
+<div id="poster-picker-modal" class="modal fade content-media-picker-modal poster-picker-modal" tabindex="-1" role="dialog" aria-labelledby="poster-picker-modal-title" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content" data-theme="dialog">
+            <div class="modal-header">
+                <h5 class="modal-title" id="poster-picker-modal-title">Select your preferred <span class="js-image-type">poster</span></h5>
+                
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="poster-picker-5533fdda-577b-4638-b35e-12b2fa516a6c" method="post" action="" novalidate="novalidate" data-poster-picker-options='{&#034;id&#034;: &#034;5533fdda-577b-4638-b35e-12b2fa516a6c&#034;}' data-js-target="poster-picker"></form>
+            </div>
+            <div class="modal-footer">
+				<div class="content-media-picker-footer" data-poster-picker-footer-for="poster-picker-5533fdda-577b-4638-b35e-12b2fa516a6c" hidden>
+					<div class="content-media-picker-note js-content-media-picker-note"></div>
+					<div class="content-media-picker-controls poster-picker-controls" data-poster-picker-controls-for="poster-picker-5533fdda-577b-4638-b35e-12b2fa516a6c"> <div class="objectonly js-objectonly" aria-hidden="true" hidden> <label for="poster-picker-frm-object-only" class="option-label -checkbox -medium -reversed"> <input type="checkbox" value="true" class="checkbox" id="poster-picker-frm-object-only" data-js-trigger="object-only" disabled /><i class="substitute"></i>This <span class="js-object-name">item</span> only </label> </div> <div class="actions"> <button form="poster-picker-5533fdda-577b-4638-b35e-12b2fa516a6c" class="button-neue -destructive -rounded" type="button" data-js-trigger="reset" disabled> <span class="label" data-js-label-for="film" >Reset <span class="js-image-type">poster</span></span> <span class="label" data-js-label-for="object" hidden>Reset for <span class="js-object-name">item</span></span> </button> <button form="poster-picker-5533fdda-577b-4638-b35e-12b2fa516a6c" class="button-neue -primary -rounded" type="submit" data-js-trigger="submit" disabled> <span class="label" data-js-label-for="film" >Save<span class="mob-hide"> changes</span></span> <span class="label" data-js-label-for="object" hidden>Save<span class="mob-hide"> for <span class="js-object-name">item</span></span></span> </button> </div> </div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+
+<div id="backdrop-picker-modal" class="modal fade content-media-picker-modal backdrop-picker-modal" tabindex="-1" role="dialog" aria-labelledby="backdrop-picker-modal-title" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content" data-theme="dialog">
+            <div class="modal-header">
+                <h5 class="modal-title" id="backdrop-picker-modal-title">Select your preferred backdrop</a></h5>
+                
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="backdrop-picker-19a5d77c-faab-443b-847b-9cffb9b566a6" method="post" action="" novalidate="novalidate" data-backdrop-picker-options='{&#034;id&#034;: &#034;19a5d77c-faab-443b-847b-9cffb9b566a6&#034;}' data-js-target="backdrop-picker"></form>
+            </div>
+            <div class="modal-footer">
+				<div class="content-media-picker-footer" data-backdrop-picker-footer-for="backdrop-picker-19a5d77c-faab-443b-847b-9cffb9b566a6" hidden>
+					<div class="content-media-picker-note js-content-media-picker-note"></div>
+					<div class="content-media-picker-controls backdrop-picker-controls" data-backdrop-picker-controls-for="backdrop-picker-19a5d77c-faab-443b-847b-9cffb9b566a6"> <div class="objectonly js-objectonly" aria-hidden="true" hidden> <label for="backdrop-picker-frm-object-only" class="option-label -checkbox -medium -reversed"> <input type="checkbox" value="true" class="checkbox" id="backdrop-picker-frm-object-only" data-js-trigger="object-only" disabled /><i class="substitute"></i>This <span class="js-object-name">item</span> only </label> </div> <div class="actions"> <button form="backdrop-picker-19a5d77c-faab-443b-847b-9cffb9b566a6" class="button-neue -destructive -rounded" type="button" data-js-trigger="reset" disabled> <span class="label" data-js-label-for="film" >Reset <span class="js-image-type">poster</span></span> <span class="label" data-js-label-for="object" hidden>Reset for <span class="js-object-name">item</span></span> </button> <button form="backdrop-picker-19a5d77c-faab-443b-847b-9cffb9b566a6" class="button-neue -primary -rounded" type="submit" data-js-trigger="submit" disabled> <span class="label" data-js-label-for="film" >Save<span class="mob-hide"> changes</span></span> <span class="label" data-js-label-for="object" hidden>Save<span class="mob-hide"> for <span class="js-object-name">item</span></span></span> </button> </div> </div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+	
+		<div id="remove-ads-modal" class="modal fade modal-upgrade-message" tabindex="-1" aria-labelledby="remove-ads-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="remove-ads-modal-title">Upgrade to remove&nbsp;ads</h5>
+                <button type="button" class="modal-close modal-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="body-text -hero">
+                    <p>Letterboxd is an independent service created by a small team, and we rely mostly on the support of our members to maintain our site and apps. Please consider upgrading to a <a href="/pro/">Pro account</a>—for less than a couple bucks a month, you’ll get cool additional features like all-time and annual stats pages (<a href="https://letterboxd.com/jack/stats/">example</a>), the ability to select (and filter by) your favorite streaming services, and no ads!</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="/pro/" class="button -action button-action">Learn more about Pro</a>
+            </div>
+        </div>
+    </div>
+</div>
+		
+		
+		<script type="module" crossorigin src="https://s.ltrbxd.com/static/js/es/partner-publishers-DA-ZssHs.js"></script>
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/P2Xu9kJm.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/C7etpEb4.js">
+		<link rel="modulepreload" crossorigin href="https://s.ltrbxd.com/static/js/es/chunks/BQRTU3o-.js">
+	
+	
+	
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4ea471a6a9dc9a0',t:'MTc5MjY5MDcyOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

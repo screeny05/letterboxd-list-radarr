@@ -1,7 +1,8 @@
 import pLimit from "p-limit";
-import { LetterboxdPoster } from "./list";
+import get from "../axios";
 import { getCachedMovieDetail } from "./movie-details";
-import { getKanpai, LETTERBOXD_ORIGIN } from "./util";
+import { parsePosters } from "./parse";
+import { LETTERBOXD_ORIGIN } from "./util";
 import * as cache from "../cache/index";
 import { logger } from "../logger";
 
@@ -22,16 +23,7 @@ export interface LetterboxdStudioFilm {
 export const getStudio = async (
     studioSlug: string
 ): Promise<LetterboxdStudioFilm[]> => {
-    const posters = await getKanpai<LetterboxdPoster[]>(
-        `${LETTERBOXD_ORIGIN}${studioSlug}`,
-        [
-            '.posteritem > .react-component, [data-component-class*="LazyPoster"], .poster-list [data-poster-url*="film"], .poster-grid [data-poster-url*="film"]',
-            {
-                slug: ["$", "[data-target-link]"],
-                title: ["$", "[data-item-name]"],
-            },
-        ]
-    );
+    const posters = parsePosters(await get(`${LETTERBOXD_ORIGIN}${studioSlug}`));
 
     // Each studio entry is enriched with its imdb/tmdb ids.
     const limit = pLimit(7);

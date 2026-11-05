@@ -40,7 +40,7 @@ app.get(/(.*)/, async (req, res) => {
     });
 
     const slug = normalizeSlug(req.params[0]);
-    const limit = req.query.limit
+    const limit = typeof req.query.limit === "string"
         ? Number.parseInt(req.query.limit)
         : undefined;
     const errorOnEmpty = req.query.errorOnEmpty

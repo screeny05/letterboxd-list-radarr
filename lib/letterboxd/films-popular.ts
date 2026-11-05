@@ -1,6 +1,7 @@
 import pLimit from "p-limit";
-import { LetterboxdPoster } from "./list";
-import { getKanpai, LETTERBOXD_ORIGIN } from "./util";
+import get from "../axios";
+import { LetterboxdPoster, parsePosters } from "./parse";
+import { LETTERBOXD_ORIGIN } from "./util";
 import * as cache from "../cache/index";
 
 const PAGE_LIMIT = 10;
@@ -48,14 +49,7 @@ export const getFilmsPopularPaginated = async (
     path: string,
     page: number
 ): Promise<LetterboxdPoster[]> => {
-    return await getKanpai<LetterboxdPoster[]>(
-        `${LETTERBOXD_ORIGIN}/films/ajax/${path}page/${page}/`,
-        [
-            '.posteritem > .react-component, [data-component-class*="LazyPoster"], .poster-list [data-poster-url*="film"], .poster-grid [data-poster-url*="film"]',
-            {
-                slug: ["$", "[data-target-link]"],
-                title: ["$", "[data-item-name]"],
-            },
-        ]
+    return parsePosters(
+        await get(`${LETTERBOXD_ORIGIN}/films/ajax/${path}page/${page}/`)
     );
 };
